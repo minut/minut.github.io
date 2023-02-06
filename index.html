@@ -1,0 +1,21 @@
+<script src="/path/to/howler.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
+
+<body>
+<div id="title">welcome home</div>
+
+<audio controls>
+    <source src="https://dl.dropboxusercontent.com/u/123456789/track01.mp3" type="audio/mpeg">
+</audio controls>
+
+<script>
+    var sound = new Howl({
+      src: ['sound.mp3']
+    });
+
+sound.play();
+</script>
+
+</body>
