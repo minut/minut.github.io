@@ -1,0 +1,64 @@
+/* Larger than mobile screen */
+@media (min-width: 40.0rem) { ... }
+
+/* Larger than tablet screen */
+@media (min-width: 80.0rem) { ... }
+
+/* Larger than desktop screen */
+@media (min-width: 120.0rem) { ... }
+
+body {
+
+}
+.button {
+	background-color: lightblue;
+	border-color: black;
+}
+.title {
+	font-family: 'Playfair Display', sans-serif;
+	font-size: 2em;
+	text-align: center;
+	margin: 1em;
+}
+.plive {
+	width: 100%;
+	text-align: center;
+}
+input#filter {
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	margin:1em;
+}
+.broxcontainer {
+	display: flex;
+	align-content: flex-start;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap:wrap;
+	cursor: ;
+}
+.brox {
+	flex-grow: 1;
+	width: 100%;
+}
+.detail {
+	display: inline-block;
+}
+.brox i {
+	min-width: 50px;
+	min-height: 20px;
+	font-size: 1.8em;
+	vertical-align: middle;
+}
+.name {
+	font-family: 'Playfair Display', serif;
+	/*font-family: 'Bowlby One SC', cursive;*/
+	font-size: 3em;
+	padding: 0.5em;
+	padding-bottom: 0.1em;
+}
+.descr {
+	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+	font-size: 0.7em;
+}

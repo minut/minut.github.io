@@ -1,21 +1,61 @@
-<script src="/path/to/howler.js"></script>
+<head>
+	<meta charset="utf-8">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Syloti+Nagri&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"> -->
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+	
+	<link rel="stylesheet" type="text/css" href="playlist.css"></link>
+
+	<!-- SCRIPT -->
+
+<!-- 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jquery-csv/src/jquery.csv.min.js"></script>
+	<script src="bower_components/howler.js/dist/howler.min.js"></script> -->
+	
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/jquery.csv.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
+
+	<script src="playlist.js"></script>
+	
+</head>
 
 <body>
-<div id="title">welcome home</div>
 
-<audio controls>
-    <source src="https://dl.dropboxusercontent.com/u/123456789/track01.mp3" type="audio/mpeg">
-</audio controls>
+<div class="container">
+	<div class="row title">alma — radio — palma</div>
 
-<script>
-    var sound = new Howl({
-      src: ['sound.mp3']
-    });
+	<div class="row plive">
+		<i class="fa fa-fw fa-4x fa-eercast"></i>
+	</div>
 
-sound.play();
-</script>
+	<input class="row" type="text" id="filter" placeholder="busca !" minlength="1">
+
+	<div id="playlist"></div>
+
+	<div class="row gbaudiogrille">
+		<audio>
+			<source src="audio/example-1.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+
+<!-- 	<audio controls>
+		<source src="https://dl.dropboxusercontent.com/u/123456789/track01.mp3" type="audio/mpeg">
+	</audio controls> -->
+
+</div>
 
 </body>
