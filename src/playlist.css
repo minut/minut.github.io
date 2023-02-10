@@ -1,3 +1,4 @@
+/* ===================================== */
 :root {
   --lblack: #6c6c6c;
   --lwhite: #f8f6f8;
@@ -19,6 +20,7 @@ html, body {
 	width: 100%;
 	background-color: var(--lwhite);
 }
+/* ===================================== */
 .header div {
 	text-align: center; 
 }
@@ -31,11 +33,15 @@ html, body {
 	font-size: 2em;
 	margin-top: 1em;
 }
-.plive {
-	font-size: 1.35em;
+.logo {
 	margin: 24px;
+	font-size: 2.5em; 
 }
-.plive:hover {
+.logo i.fa-pagelines {
+	color: #68a24c;
+	opacity: 0.8;
+}
+.logo:hover {
     cursor: pointer;
 }
 
@@ -44,12 +50,11 @@ input#search {
 	margin-bottom: 40px;
 	border-radius: 12px;
 	text-align: center;
+	opacity: 0.7;
 }
+/* ===================================== */
 #playlist {
 	padding-bottom: 200px;
-}
-svg path {
-	stroke: gray;
 }
 .row {
 	width: 100%;
@@ -87,16 +92,18 @@ svg path {
 	font-family: 'Playfair Display', serif;
 	/*font-family: 'Bowlby One SC', cursive;*/
 	font-size: 2.4em;
-	margin-left: 110px;
+	margin-left: 105px;
 	padding-right: 15px;
 }
 .descr {
 	font-family: 'Noto Sans Syloti Nagri', sans-serif;
 	font-size: 0.9em;
-	margin-left: 110px;
+	margin-top: 5px;
+	margin-left: 105px;
 	padding-right: 15px;
 	color: var(--lblack);
 }
+/* ===================================== */
 .stickbottom{
 	position: fixed;
 	bottom: 0;

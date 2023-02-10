@@ -69,7 +69,7 @@ window.addEventListener('load', function() {
 	    	initPlayerFromUrl("");
 
 	    	// live radio
-	    	$('.plive').on('click', function() {
+	    	$('.logo').on('click', function() {
 	    		initPlayerFromUrl("https://stream-40.zeno.fm/a9k2rt4xuxhvv?zs=Zbt1flmNT6SoOkWcVdSt0A");
 			});
 			
