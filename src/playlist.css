@@ -29,7 +29,8 @@ html, body {
 	border-color: black;
 }
 .title {
-	font-family: 'Playfair Display', sans-serif;
+	font-family: 'Arvo', serif;
+	font-style: italic;
 	font-size: 2em;
 	margin-top: 1em;
 }
