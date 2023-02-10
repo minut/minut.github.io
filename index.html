@@ -2,6 +2,7 @@
 	<meta charset="utf-8">
 	<title>alma radio</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
 	<meta property="og:url" content="http://minut.github.io/radio"/>
 
     <meta name="description" content="alma palma radio"/>
@@ -21,7 +22,7 @@
 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 	
-	<link rel="stylesheet" type="text/css" href="playlist.css"></link>
+	<link rel="stylesheet" type="text/css" href="src/playlist.css"></link>
 
 	<!-- SCRIPT -->
 
@@ -31,10 +32,11 @@
 	
 	<script src="libs/jquery.min.js"></script>
 	<script src="libs/jquery.csv.min.js"></script>
+	<script src="libs/jquery.fittext.js"></script>
 
 	<script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
 
-	<script src="playlist.js"></script>
+	<script src="src/playlist.js"></script>
 	
 </head>
 
@@ -43,12 +45,12 @@
 <div class="container">
 
 	<div class="header">
-		<div class="row title">alma ~ radio  palma</div>
-		<div class="row plive">
-			<i class="fa fa-fw fa-4x fa-simplybuilt"></i>
+		<div class="title">alma ~ radio • palma</div>
+		<div class="plive">
+			<i class="fa fa-fw fa-4x fa-pagelines"></i>
 		</div>
-		<div class="row">
-			<input type="text" id="filter" placeholder="busca !" minlength="1">
+		<div>
+			<input type="text" id="search" placeholder="¡ busca !" minlength="1">
 		</div>
 	</div>
 

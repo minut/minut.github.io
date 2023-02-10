@@ -15,11 +15,12 @@
 /* Larger than desktop screen */
 @media (min-width: 120.0rem) { ... }
 
-body {
+html, body {
+	width: 100%;
 	background-color: var(--lwhite);
 }
-.row {
-	text-align: center;
+.header div {
+	text-align: center; 
 }
 .button {
 	background-color: lightblue;
@@ -31,16 +32,16 @@ body {
 	margin-top: 1em;
 }
 .plive {
-	font-size: 1.5em;
-	margin: 20px 0 20px 0;
+	font-size: 1.35em;
+	margin: 24px;
 }
 .plive:hover {
     cursor: pointer;
 }
 
-input#filter {
-	width: 25%;
-	margin-bottom: 1em;
+input#search {
+	width: 30%;
+	margin-bottom: 40px;
 	border-radius: 12px;
 	text-align: center;
 }
@@ -50,36 +51,34 @@ input#filter {
 svg path {
 	stroke: gray;
 }
-.brox {
-	flex-grow: 1;
+.row {
 	width: 100%;
-	padding: 20px;
+	min-height: 90px;
+	margin-bottom: 20px;
 }
-
 .onair{
 	color: darkred;
 }
 .detail {
-	display: inline-block;
 	vertical-align: middle;
 }
 .icon {
+	position: absolute;
 	height: 100%;
 	background-color: var(--dwhite);
 	width: 70px;
 	height: 70px;
-	margin-left: 20px;
-	border-radius: 17px;
+	margin-left: 15px;
 }
 .onair .icon {
-	animation: fa-spin 2s infinite linear;
+	animation: fa-spin 4s infinite linear;
 }
 .icon i {
 	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	font-size: 2em;
+	font-size: 2.2em;
 }
 .icon:hover {
     cursor: pointer;
@@ -87,14 +86,15 @@ svg path {
 .name {
 	font-family: 'Playfair Display', serif;
 	/*font-family: 'Bowlby One SC', cursive;*/
-	font-size: 3em;
-	margin-left: 30px;
+	font-size: 2.4em;
+	margin-left: 110px;
+	padding-right: 15px;
 }
 .descr {
 	font-family: 'Noto Sans Syloti Nagri', sans-serif;
-	font-size: 0.7em;
-	max-width: 40%;
-	margin-left: 20px;
+	font-size: 0.9em;
+	margin-left: 110px;
+	padding-right: 15px;
 	color: var(--lblack);
 }
 .stickbottom{
