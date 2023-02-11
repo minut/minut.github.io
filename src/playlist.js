@@ -70,7 +70,7 @@ window.addEventListener('load', function() {
 
 	    	// live radio
 	    	$('.logo').on('click', function() {
-	    		initPlayerFromUrl("https://stream-40.zeno.fm/a9k2rt4xuxhvv?zs=Zbt1flmNT6SoOkWcVdSt0A");
+	    		initPlayerFromUrl("https://stream-57.zeno.fm/m5db6drjtmatv?zs=zVSwPQ_7QriqOyqvgizjPg");
 			});
 			
 	    	// search box filtering podcasts
