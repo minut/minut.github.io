@@ -29,7 +29,9 @@ html, body {
 	border-color: black;
 }
 .title {
-	font-family: 'Arvo', serif;
+	font-family: 'Dancing Script', cursive;
+	/*font-family: 'Sawarabi Mincho', serif;*/
+	/*font-family: 'Arvo', serif;*/
 	font-style: italic;
 	font-size: 2em;
 	margin-top: 1em;
@@ -75,9 +77,11 @@ input#search {
 	width: 70px;
 	height: 70px;
 	margin-left: 15px;
+	opacity: 0.5;
 }
 .onair .icon {
 	animation: fa-spin 4s infinite linear;
+	opacity: 1;
 }
 .icon i {
 	position: relative;
@@ -85,24 +89,29 @@ input#search {
 	left: 50%;
 	transform: translate(-50%,-50%);
 	font-size: 2.2em;
+	filter: drop-shadow(0 0 5px #fff);
 }
 .icon:hover {
     cursor: pointer;
 }
 .name {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Dancing Script', cursive;
+	/*font-family: 'Playfair Display', serif;*/
 	/*font-family: 'Bowlby One SC', cursive;*/
 	font-size: 2.4em;
 	margin-left: 105px;
 	padding-right: 15px;
+	max-width: 500px;
 }
 .descr {
-	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Noto Sans Syloti Nagri', sans-serif;*/
 	font-size: 0.9em;
 	margin-top: 5px;
 	margin-left: 105px;
 	padding-right: 15px;
 	color: var(--lblack);
+	opacity: 0.5;
 }
 /* ===================================== */
 .stickbottom{

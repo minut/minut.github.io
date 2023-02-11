@@ -40,7 +40,10 @@ window.addEventListener('load', function() {
 				var de = $('<div class="detail descr"</div>').text(d.descr);
 
 				var rad = Math.floor(35*Math.random());
+				rad = 15;
 				var n = 77 + i%15;
+				if(d.pattern)
+					n = d.pattern;
 				var svg = "svg/p"+n+".svg";
 				ic.attr({
 					link: d.link,
