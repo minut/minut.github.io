@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
 				ic.on('click', function() {
 
 					/////////////// PLAY
-					var url = "files/" + $(this).attr("link");
+					var url = "files/"+$(this).attr("link")+".mp3";
 					console.log("clicked:",url);
 					initPlayerFromUrl(url);
 					$(this).parent().addClass("onair");
