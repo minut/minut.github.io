@@ -1,7 +1,23 @@
 ////////////////////////////////////////////
 
 var gPlayer = null ;
-var initPlayerFromUrl = function(url) {
+// we will parse text based on keys
+var tagskeys = {
+	"?":["compartido","question-circle"],
+	"E":["encontrar eventos","calendar-o.clock-o"],
+	"Y":["visitar fincas","podcast.home.street-view"],
+	"C":["comprar tiendas","shopping-basket.calculator"],
+	"A":["cuidar plantas y animales","pagelines"],
+	"D":["descubrir tesoros","compass.sun-o"],
+	"S":["salvar cosas","recycle.suitcase.wrench.pie-chart"],
+	"T":["debatir idea politica","commenting.stack-exchange.dot-circle-o.bolt.exclamation-circle.remove.spinner.cogs"],
+	"M":["mover viaje compartido","truck.car.bus.thumbs-o-up"],
+	"O":["soñar musica","music.headphones.eye"],
+	"R":["regalo doy","gift.smile-o.heart"],
+	"B":["busco necesito","life-ring.meh-o.frown-o.search.heart-o.heartbeat"]
+	};
+
+var initPlayerFromUrl = function(url,islive) {
 	GreenAudioPlayer.stopOtherPlayers();
 	if(gPlayer) gPlayer.setCurrentTime(0);
 
@@ -13,6 +29,12 @@ var initPlayerFromUrl = function(url) {
 	$(".container").append(pp)
 	gPlayer = new GreenAudioPlayer(".player", {"autoplay":true});
 	gPlayer.togglePlay();
+	$(".control").show();
+
+	if(islive)
+		$(".logo").addClass("live");
+	else
+		$(".logo").removeClass("live");
 };
 
 window.addEventListener('load', function() { 
@@ -28,6 +50,17 @@ window.addEventListener('load', function() {
 		dataType: "text",
 		complete: function () {
 	    	console.log("jdata",data);
+
+			$.map(tagskeys, function(v,k){
+				var ic = v[1].split(".")[0];
+				var tag = $('<div class="tag hint--bottom" data-hint="'+v[0]+'"><i class="fa fa-fw fa-'+ic+'"></i></div>');
+				
+				tag.on('click', function() {
+					$(this).toggleClass("on");
+				});
+				$('.tags').append(tag);
+			});
+
 	    	var p = $('#playlist');
 	    	data.forEach(function(d,i) {
 
@@ -59,7 +92,7 @@ window.addEventListener('load', function() {
 
 					/////////////// PLAY
 					var url = "files/"+$(this).attr("link")+".mp3";
-					console.log("clicked:",url);
+					//console.log("clicked:",url);
 					initPlayerFromUrl(url);
 					$(this).parent().addClass("onair");
 
@@ -70,10 +103,12 @@ window.addEventListener('load', function() {
 	    	$(".name").fitText();
 
 	    	initPlayerFromUrl("");
+	    	$(".controls").hide();
+	    	$(".loading").hide();
 
 	    	// live radio
-	    	$('.logo').on('click', function() {
-	    		initPlayerFromUrl("http://stream.zeno.fm/kl8i0p0gju4vv");
+	    	$('.play').on('click', function() {
+	    		initPlayerFromUrl("http://stream.zeno.fm/kl8i0p0gju4vv",true);
 			});
 			
 	    	// search box filtering podcasts
