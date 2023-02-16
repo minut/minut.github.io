@@ -29,96 +29,187 @@
 @media (min-width: 120.0rem) { ... }
 
 html, body {
+	padding: 0;
+	margin: 0;
 	width: 100%;
 	background-color: var(--lwhite);
 }
 /* ===================================== */
-.header div {
-	text-align: center; 
+.hide {
+	display: none !important;
+}
+.header {
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
+	width: 100%;
+	text-align: center;
+	margin-bottom: 40px;
+	/*border-bottom: 7px solid lightgray;*/
+	z-index: 999;
 }
 .alma {
 	font-family: 'Dancing Script', cursive;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-style: italic;
 	color: var(--lverde);
-	margin-top: 15px;
+	margin-top: 10px;
 }
-/*.button {
-	background-color: lightblue;
-	border-color: black;
-}*/
 .title {
 	font-family: 'Arvo', serif;
 	/*font-family: 'Sawarabi Mincho', serif;*/
 	/*font-family: 'Arvo', serif;*/
-	font-size: 2em;
-	margin-top: 4px	;
+	font-size: 2.2em;
 	filter: drop-shadow(0 0 25px #729c16);
+	margin-top: 10px;
+}
+.hleft, .hright {
+
+}
+.hleft {
+	left:0;
+}
+.hright {
+
 }
 .moto {
 	font-family: 'Dancing Script', cursive;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-style: italic;
 	color: var(--lverde);
-	margin-top: 4px;
 }
 /* ===================================== */
-.logo {
-	position: relative;
-	margin: 15px;
-	font-size: 2em; 
-}
-.logo i.fa-pagelines {
-	color: var(--lverde);
-	opacity: 0.8;
-}
-.logo:hover {
-    cursor: pointer;
-}
-.logo.live .fa-play-circle-o { display: none; }
-.logo.live .fa-pagelines {
-	animation: fa-spin 1.5s infinite cubic-bezier(.42,.77,.72,.3);
-	color: darkred; }
-.ayudanos {
+#toggleview {
 	position: absolute;
-	left: 60%;
-	top: 50%;
-	transform: translate(100%,-50%);
-	font-size: 0.9rem;
+	left: 10px;
+	top: 10px;
+	/*transform: translate(-50%,-50%);*/
+	color: var(--lblack);
+	cursor: pointer;
+}
+/* ===================================== */
+#ayudanos {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+	/*transform: translate(-50%,-50%);*/
 	font-style: italic;
 	color: var(--lblack);
 	text-decoration: none;
 }
-.ayudanos span {
+#ayudanos span {
 	display: block;
 	font-size: 0.7em;
 }
 /* ===================================== */
-input#search {
-	width: 45%;
-	margin-bottom: 10px;
+.playstream {
+	font-size: 0.8em; 
+}
+.playstream i.fa-pagelines {
+	color: var(--lverde);
+	opacity: 0.8;
+}
+.playstream:hover {
+    cursor: pointer;
+}
+.playstream.live .fa-play-circle-o { display: none; }
+.playstream.live .fa-pagelines {
+	animation: fa-spin 1.5s infinite cubic-bezier(.42,.77,.72,.3);
+	color: darkred; }
+/* ===================================== */
+input {
 	border-radius: 12px;
 	text-align: center;
 	opacity: 0.7;
 	font-size: 0.8em;
 }
+.actions {
+	margin-top: 8px;
+	margin-bottom: 7px;
+}
+.searcher, .adder {
+	display: inline-block;
+	position: relative;
+}
+#toggleinput {
+	position: absolute;
+	left: 50%;
+	transform: translate(-128px,2px);
+	border-radius: 15px;
+	border: 1px solid lightgray;
+	background: lightgrey;
+	width: 40px;
+	height: 18px;
+	overflow: hidden;
+}
+#toggleinput .tbut {
+	position: absolute;
+	width: 18px;
+	height: 20px;
+	background: white;
+	top: 1px;
+	right: 1px;
+}
+#toggleinput i {
+	position: absolute;
+	font-size: 0.6em;
+	top: 4px;
+	color: black;
+}
+#toggleinput.switched .tbut {
+	left: 0;
+}
+#toggleinput.switched i.fa-plus { color: darkred; }
+#toggleinput.switched i.fa-search { color: gray; }
+#toggleinput i.fa-plus { left: 6px; color: gray; }
+#toggleinput i.fa-search { right: 6px; color: var(--lverde);}
+.adder {
+
+}
+input#search {
+	padding: 2px 2px 2px 2px;
+	color: var(--lverde);
+	width: 160px;
+}
+input#addnew {
+	padding: 2px 20px 2px 2px;
+	filter: drop-shadow(0 0 5px #9e3030);
+	color: darkred;
+	width: 160px;
+}
+#submitnew {
+	position: absolute;
+	top: 7px;
+	right: 8px;
+	font-size: 0.6em;
+	color: darkred;
+}
+#toggleinput, #submitnew {
+	cursor: pointer;
+}
+/* ===================================== */
 .tags {
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 .tag {
-	padding: 3px;
+	padding: 3px 3px;
 	margin: 1px;
 	border-radius: 7px;
-	color: lightgrey;
+	color: lightgray;
+	/*filter: drop-shadow(0 0 2px #4d4d4d);*/
+	z-index: 99999;
 }
 .tag:hover {
 	cursor: pointer;
 }
 .tag.on {
 	background-color: var(--lverde);
+	color: white;
+	filter: none;
 }
 .tag.on i {
-	color: white;
+
 }
 /* ===================================== */
 #playlist {
@@ -179,9 +270,52 @@ input#search {
 	opacity: 0.5;
 }
 /* ===================================== */
-.stickbottom{
+#map {
+	position: absolute;
+	margin: 0;
+	top: 178px;
+	bottom: 50px;	
+	left: 0;
+	right: 0;
+	border-top: 2px solid lightgray;
+}
+.pt {
+	border-radius: 5px;
+	text-align: left;
+}
+.pt i {
+	margin-right: 4px;
+}
+.pt span {
+	display: none;
+}
+.pt.inflated.pointed {
+	background: #c4daaf73;
+}
+.pt.pointed span {
+	display: inline;
+}
+.pt.deflated {
+	font-size: 1.4em;
+	color: #d089197d;
+}
+.pt.inflated {
+	font-size: 1em;
+	padding: 5px 7px;
+	/* we need to give an explicit size to the icons to find which icons
+	 conflict with each other but we actually want them to be auto-sized */
+	width: 140px !important;
+	height: auto !important;
+}
+.pt.inflated div {
+	border-radius: 6px;
+	min-width: 40px;
+}
+/* ===================================== */
+.player {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	border-top: 7px solid lightgray;
 }
+/* ===================================== */

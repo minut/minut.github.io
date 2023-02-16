@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8">
-	<title>radio ✂ alma</title>
+	<title>✂ radio alma</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
 	<meta property="og:url" content="http://minut.github.io/radio"/>
@@ -20,27 +20,21 @@
 
 	<!-- CSS -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"> -->
-
-	<link rel="stylesheet" type="text/css" href="css/green-audio-player.min.css">
-
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 	
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"></link>
-	
+	<link rel="stylesheet" type="text/css" href="css/green-audio-player.min.css">
+	<link rel="stylesheet" type="text/css" href="css/leaflet.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/hint.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="src/playlist.css"></link>
 
 	<!-- SCRIPT -->
 
-<!-- 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/jquery-csv/src/jquery.csv.min.js"></script>
-	<script src="bower_components/howler.js/dist/howler.min.js"></script> -->
-	
 	<script src="libs/jquery.min.js"></script>
 	<script src="libs/jquery.csv.min.js"></script>
 	<script src="libs/jquery.fittext.js"></script>
-
 	<script src="libs/green-audio-player.min.js"></script>
+	<script src="libs/leaflet.js"></script>
+    <script src="libs/leaflet.inflatable-markers-group.js"></script>
 
 	<script src="src/playlist.js"></script>
 	
@@ -52,24 +46,42 @@
 
 	<div class="header">
 		<div class="alma">criada con ♥ en la palma</div>
-		<div class="title">radio ~ alma</div>
-		<div class="moto">♪ nube audiofonica compartida ♫</div>
-		<div class="logo">
-			<span class="play fa-stack fa-lg">
+		<div class="title">
+			<span class="hleft">radio</span>
+			<span class="playstream fa-stack fa-lg">
 				<i class="fa fa-play-circle-o fa-stack-2x"></i>
 				<i class="fa fa-pagelines fa-stack-1x fa-rotate-90"></i>
 			</span>
-			<a href="https://annuel.framapad.org/p/fAU4-JlO1n6Db6ovgIpF" target="_blank" class="ayudanos">
-				<i class="fa fa-envelope-square"></i>
-				<span>¡ juntate ¡</span>
-			</a>
+			<span class="hright">alma</span>
 		</div>
-		<div>
-			<input type="text" id="search" placeholder="¡ busca !" minlength="1">
+		<div id="toggleview">
+			<i class="fa fa-list"></i>
 		</div>
+		<a id="ayudanos" href="https://annuel.framapad.org/p/fAU4-JlO1n6Db6ovgIpF" target="_blank">
+			<i class="fa fa-envelope-square"></i>
+			<span>¡ juntate ¡</span>
+		</a>
+		<div class="moto">♪ nube audiofonica compartida ♫</div>
+
+		<div class="actions">
+			<div id="toggleinput">
+				<div class="tbut"></div>
+				<i class="fa fa-plus"></i>
+				<i class="fa fa-search"></i>
+			</div>
+			<div class="searcher">
+				<input type="text" id="search" placeholder="busca" minlength="1">
+			</div>
+			<div class="adder hide">
+				<input type="text" id="addnew" placeholder="#T escribe aqui" minlength="1">
+				<span class="fa fa-send" id="submitnew"></span>
+			</div>
+		</div>
+
 		<div class="tags"></div>
 	</div>
 
+	<div id="map"></div>
 	<div id="playlist"></div>
 
 </div>
