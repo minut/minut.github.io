@@ -2,12 +2,12 @@
 var urlfetchcsv = "https://ethercalc.net/_/points/csv";
 //var urlfetchcsv = "https://lite.framacalc.org/_/f5mtflxh78-9zbr/csv";
 //var urlfetchcsv = "src/points.csv";
-
 var urlpostline = "https://ethercalc.net/_/points";
 //var urlpostline = "https://lite.framacalc.org/_/f5mtflxh78-9zbr";
 
 var gPlayer = null ;
 var map = null ;
+var scount = 0;
 
 const group = L.inflatableMarkersGroup({
 	iconCreateFunction: function (icon) {
@@ -39,6 +39,7 @@ var tagskeys = {
 	};
 ////////////////////////////////////////////
 var initPlayerFromUrl = function(url,islive) {
+	console.log("will load audio url:",url);
 	GreenAudioPlayer.stopOtherPlayers();
 	if(gPlayer) gPlayer.setCurrentTime(0);
 
@@ -60,14 +61,15 @@ var initPlayerFromUrl = function(url,islive) {
 ////////////////////////////////////////////
 var addNewPoint = function(text) {
 	text = text.replace(/,/g, "");
-	var tg = text.slice(0,1);
-	if(tagskeys.hasOwnProperty(tg)) {
-		text = text.slice(2,999);
-	} else tg = "";
+	var tgs = text.match(/^[A-Z]* /g);
+	if(tgs) tgs = tgs[0].trim();
+	else tgs = "";
+	if(tgs && tagskeys.hasOwnProperty(tgs[0])) {
+		text = text.replace(tgs,"");
+	};
 	var lat = map.getCenter().lat.toFixed(3);
 	var lng = map.getCenter().lng.toFixed(3);
-	var gps = '"'+lat+';'+lng+'"';
-	var tronco = "1,"+gps+","+tg+","+text;
+	var tronco = "230218,1,"+lat+","+lng+","+tgs+","+text;
 	$.ajax({
 		type: 'POST',
 		url: urlpostline,
@@ -75,26 +77,41 @@ var addNewPoint = function(text) {
 		contentType: 'text/csv',
 		processData: false,
 		data: tronco
+	}).fail(function() {
+		//alert("error");
 	});
 };
 ////////////////////////////////////////////
+var fullMarks = null;
+var toggleTag = function(tagelem) {
+	var on = tagelem.hasClass("on");
+	$(".on").removeClass("on");
+	$(".row").show();
+	$(".pt").show();
+	if(!on) {
+		var tg = tagelem.attr("tag");
+		tagelem.addClass("on");
+		$(".row").hide();
+		$(".pt").hide();	
+		$(".tagged-"+tg).show();
+	}
+	group._zoomend();
+};
+var filterData = function() {
+	if($(".tag.on").length>0) {
+		var currt = $(".tag.on").attr("tag");
+		$(".pt").hide();
+		$(".tagged-"+currt).show();
+	}
+}
+////////////////////////////////////////////
 var loadData = function () {
-
 	// MAKE TAGS BAR
 	$.map(tagskeys, function(v,k){
 		var ic = v[1].split(".")[0];
 		var tag = $('<div tag="'+k+'" class="tag hint--bottom" data-hint="'+v[0]+'"><i class="fa fa-fw fa-'+ic+'"></i></div>');
-		
 		tag.on('click', function() {
-			var on = $(this).hasClass("on");
-			$(".on").removeClass("on");
-			$(".row").show();
-			if(!on) {
-				$(this).addClass("on");
-				$(".row").hide();
-				console.log($(this).attr("tag"));
-				$(".tagged-"+$(this).attr("tag")).show();
-			}
+			toggleTag($(this));
 		});
 		$('.tags').append(tag);
 	});
@@ -103,8 +120,7 @@ var loadData = function () {
 	var p = $('#playlist');
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
-		
-		var icfa = "question-circle";
+		var icfa = "dot-circle-o"; // default icon if not specified
 		var nsvg = 77 + i%15;
 		if(tagskeys.hasOwnProperty(d.tags[0])) {
 			icfa = tagskeys[d.tags[0]][1].split(".")[0];
@@ -113,53 +129,60 @@ var loadData = function () {
 		var spl = d.text.split(" ");
 		var txtshort = spl.slice(0,2).join(" ");
 		var txtlong = spl.slice(2,-1).join(" ");
+		var classtags = "tagged-"+d.tags.split("").join(" tagged-");
 
+		//////////////////////////////////////////////////////
 		////////////////// CREATE PLAYLIST DIVs
-		var ct = "tagged-"+d.tags.split("").join(" tagged-");
-		var box = $('<div class="row '+ct+'"></div>');
+		var box = $('<div class="row '+classtags+'"></div>');
 		box.attr("scan",d.text);
 		var na = $('<div class="detail name"></div>').text(txtshort);
     	var ic = $('<div class="detail icon"><i class="fa fa-fw fa-'+icfa+'"></i></div>');
 		var de = $('<div class="detail descr"></div>').text(txtlong);
-
+		// icon size and background
 		var rad = Math.floor(35*Math.random());
 		var svg = "svg/p"+nsvg+".svg";
 		ic.attr({
 			link: d.link,
 			style: "background-image:url("+svg+"); border-radius:"+rad+"px;"
 		});
-		box.append(ic);
-		box.append(na);
-		box.append(de);
+		box.append(ic).append(na).append(de);
 		p.append(box);
-
 		ic.on('click', function() {
-			/////////////// PLAY
-			var url = "files/"+$(this).attr("link")+".mp3";
-			//console.log("clicked:",url);
-			initPlayerFromUrl(url);
+			initPlayerFromUrl("files/"+$(this).attr("link")+".mp3");
 			$(this).parent().addClass("onair");
 		});
-		
+
+		//////////////////////////////////////////////////////
 		////////////////// CREATE MAP MARKERs
-		var html = '<div><i class="fa fa-'+icfa+'"></i>'+txtshort+"<span>"+txtlong+'</span></div>';
-		var gps = d.gps.split(";");
-		if(!gps)
-			gps = [Math.random(0)];
-		const marker = L.marker(gps, {
+		var playbutt = "";
+		if(d.link) {
+			var playbic = $('<i class="fa fa-play-circle-o" link="'+d.link+'"></i>');
+			playbic.on('click', function() {
+				initPlayerFromUrl("files/"+$(this).attr("link")+".mp3");
+				$(this).parent().addClass("onair");
+			});
+			playbutt = playbic.prop('outerHTML');
+		}
+		var html = '<div><i class="fa fa-'+icfa+'"></i>'+playbutt+txtshort+" <span>"+txtlong+'</span></div>';
+		if(!d.lat) {
+			d.lat = 28.65+0.01*Math.random();
+			d.lng = -17.83+0.01*Math.random();
+		} else {
+			d.lat = +d.lat;
+			d.lng = +d.lng;
+		}
+		const marker = L.marker([d.lat,d.lng], {
 			icon: L.divIcon({
 				html: html,
 				iconSize:[40,40], // this value is necessary for this plugin
 				iconAnchor:[0,0],
-				className:'pt inflated',
+				className: classtags+' pt inflated ',
 			})
 		});
         marker.myData = d; // hijack the L.Layer object to pass data
 		group.addLayer(marker);
-
 		marker.on("click", function(e){
 			$(e.sourceTarget._icon).toggleClass("pointed");
-			// if cluster, zoom in
 			var cluster = $(e.sourceTarget._icon).hasClass("deflated");
 			if(cluster) {
 				map.setZoomAround(e.latlng,map.getZoom()+1);
@@ -167,6 +190,7 @@ var loadData = function () {
 		});
 	});
 	group.addTo(map);
+	fullMarks = group._markers;
 
 	$(".name").fitText();
 
@@ -195,9 +219,9 @@ var loadData = function () {
 		$("#addnew").val("");
 	});
 	// toggle view
-	$("#toggleview").on('click', function() {
-		$("#toggleview i").toggleClass("fa-list");
-		$("#toggleview i").toggleClass("fa-map");
+	$(".toglview").on('click', function() {
+		$(".toglview i").toggleClass("fa-list");
+		$(".toglview i").toggleClass("fa-map");
 		$("#map").toggleClass("hide");
 		$("#playlist").toggleClass("hide");
 	});
@@ -243,6 +267,14 @@ var buildMap = function() {
 		subdomains: 'abcd',
 		maxZoom: 20
 	});
+	var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+	});
+	var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+		subdomains: 'abcd',
+		maxZoom: 20
+	});
 	map = L.map('map',{
 		zoomControl: true,
         scrollWheelZoom: true,
@@ -261,7 +293,9 @@ var buildMap = function() {
 		"Thunderforest_Outdoors": Thunderforest_Outdoors,
 		"Thunderforest_Pioneer": Thunderforest_Pioneer,
 		"CyclOSM": CyclOSM,
-		"CartoDB_PositronNoLabels": CartoDB_PositronNoLabels
+		"CartoDB_PositronNoLabels": CartoDB_PositronNoLabels,
+		"Esri_WorldImagery": Esri_WorldImagery,
+		"CartoDB_Positron": CartoDB_Positron
 	};
 	var layerControl = L.control.layers(tileLayers, null, {position: 'topleft'});
 	layerControl.addTo(map);
@@ -272,12 +306,34 @@ var buildMap = function() {
 		// close all popups
 		$(".pointed").removeClass("pointed");
 	});
+	map.on('zoomend', function(e) {
+		filterData();
+	});
 };
 ////////////////////////////////////////////
 window.addEventListener('load', function() { 
 
 	console.log("welcome");
 
+	// splash about screen
+	$.get("README.md", function(data) {
+		$(".about .introduction").html(marked.parse(data));
+	});
+	$(".about i.fa-close").on('click', function(e) {
+		$(".about").hide();
+	});
+	$(".toglabout").on('click', function(e) {
+		$(".about").show();
+	});
+	$(".about").hide();
+
+	// $(".toglview").hide();
+	// $(".hleft").on('click', function(e) {
+	// 	scount+=1;
+	// 	if(scount>3)
+	// 		$(".toglview").show();
+	// });
+	
 	buildMap();
 
 	$.ajax({

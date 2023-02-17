@@ -1,14 +1,17 @@
-on,gps,tags,text,link
-1,"28.67;-17.82",Q,"de quien es esta tierra ?",
-1,"28.68;-17.83",E,"el 12.01 2pm viene DJ Kungun a presentar trucos para usar la mapa alma",
-1,"28.63;-17.84",I,"finca kungun les ofrece un vaso de limonada y physalis seco en cambio de plantones",
-1,"28.62;-17.85",C,"sabores de garafia, tienda ecologica, verduras garafianas, productos artesanales",
-1,"28.61;-17.77",A,"el tagazaste, reserva natural de nitrogeno",
-1,"28.62;-17.78",D,"fuente de la negra, pino centenario",
-1,"28.63;-17.71",S,"almendreros comidos por lichen, a podar !",
-1,"28.64;-17.72",T,"no se me gusta como se usa el dinero publico",
-1,"28.65;-17.83",M,"cada martes 8am PUN>LLA 1â",
-1,"28.66;-17.94",O,"circulo de canto y musica",
-1,"28.67;-17.95",B,"mantas o tejidos fuertes, puedo pagar :)",
-1,"28.68;-17.97",F,"ofresco tablas de pino 2m por 30, un poco usadas",
-1,"28.69;-17.96",T,"abrir con pala lado mar y instalar mesas con barbacoa",
+date,real,lat,lng,tags,text,link
+,,,,,un texte sans rien d'autre que lui même,
+230207,1,28.67,-17.82,QB,"alguien sabiendo quien cuida esta tierra ? (barranco encima de carretera)",batucada
+230222,1,28.68,-17.83,E,"el 12.01 2pm viene DJ Kungun a presentar trucos para usar radio alma",birds
+230207,1,28.63,-17.84,I,"kungun finca les ofrece un vaso de limonada y physalis seco a cada primera visita, luego 10€",encanto
+230207,1,28.62,-17.85,C,"sabores de garafia - tienda ecologica, verduras locales, productos artesanales, gente simpatica",gato
+230207,1,28.61,-17.77,A,"el tagazaste es reserva natural de nitrogeno",guapo
+230207,1,28.62,-17.78,D,"fuente de la negra, pino centenario, mirar al cielo",love
+230207,1,28.63,-17.71,SB,"almendreros comidos por lichen, a podar !",micro
+230207,1,28.64,-17.72,T,"no se me gusta como se usa el dinero publico",pasos
+230207,1,28.65,-17.83,MF,"cada martes voy a las 8am puntagorda>losllanos, 2€ participacion",sepa
+230207,1,28.66,-17.94,O,"circulo de canto y musica",voila
+230207,1,28.67,-17.95,B,"busco mantas o tejidos fuertes, min 1m50, puedo pagar :)",yang
+230207,1,28.68,-17.97,F,"ofresco tablas de pino 2mx30cm, un poco usadas",
+230207,1,28.69,-17.96,T,"abrir con pala lado mar y instalar mesas con barbacoa",
+230207,1,28.63,-17.93,T,"estar confiado",
+230207,1,28.65,-17.83,TF,"ofrescer",

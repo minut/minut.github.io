@@ -32,7 +32,26 @@ html, body {
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	background-color: var(--lwhite);
+	background: var(--lwhite);
+}
+/* ===================================== */
+.about {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 20px;
+	text-align: center;
+	background: var(--lwhite);
+	z-index: 9999999;
+	overflow-y: scroll;
+}
+.about i.fa-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
 }
 /* ===================================== */
 .hide {
@@ -79,28 +98,20 @@ html, body {
 	color: var(--lverde);
 }
 /* ===================================== */
-#toggleview {
+.butt {
 	position: absolute;
-	left: 10px;
 	top: 10px;
-	/*transform: translate(-50%,-50%);*/
 	color: var(--lblack);
 	cursor: pointer;
+	font-size: 1.7em;
 }
-/* ===================================== */
-#ayudanos {
-	display: block;
-	position: absolute;
-	right: 10px;
-	top: 7px;
+.toglview {
+	left: 10px;
 	/*transform: translate(-50%,-50%);*/
-	font-style: italic;
-	color: var(--lblack);
-	text-decoration: none;
 }
-#ayudanos span {
-	display: block;
-	font-size: 0.7em;
+.toglabout {
+	right: 10px;
+	/*transform: translate(-50%,-50%);*/	
 }
 /* ===================================== */
 .playstream {
@@ -118,13 +129,8 @@ html, body {
 	animation: fa-spin 1.5s infinite cubic-bezier(.42,.77,.72,.3);
 	color: darkred; }
 /* ===================================== */
-input {
-	border-radius: 12px;
-	text-align: center;
-	opacity: 0.7;
-	font-size: 0.8em;
-}
 .actions {
+	position: relative;
 	margin-top: 8px;
 	margin-bottom: 7px;
 }
@@ -135,26 +141,28 @@ input {
 #toggleinput {
 	position: absolute;
 	left: 50%;
-	transform: translate(-128px,2px);
+	top: 50%;
+	transform: translate(-140px,-50%);
 	border-radius: 15px;
 	border: 1px solid lightgray;
 	background: lightgrey;
-	width: 40px;
-	height: 18px;
+	width: 50px;
+	height: 25px;
 	overflow: hidden;
 }
 #toggleinput .tbut {
 	position: absolute;
-	width: 18px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 	background: white;
 	top: 1px;
 	right: 1px;
 }
 #toggleinput i {
 	position: absolute;
-	font-size: 0.6em;
-	top: 4px;
+	font-size: 0.8em;
+	top: 50%;
+	transform: translate(0,-50%);
 	color: black;
 }
 #toggleinput.switched .tbut {
@@ -162,27 +170,27 @@ input {
 }
 #toggleinput.switched i.fa-plus { color: darkred; }
 #toggleinput.switched i.fa-search { color: gray; }
-#toggleinput i.fa-plus { left: 6px; color: gray; }
-#toggleinput i.fa-search { right: 6px; color: var(--lverde);}
-.adder {
-
+#toggleinput i.fa-plus { left: 8px; color: gray; }
+#toggleinput i.fa-search { right: 8px; color: var(--lverde);}
+input {
+	border-radius: 17px;
+	text-align: center;
+	padding: 6px 4px 2px 4px;
 }
 input#search {
-	padding: 2px 2px 2px 2px;
 	color: var(--lverde);
 	width: 160px;
 }
 input#addnew {
-	padding: 2px 20px 2px 2px;
 	filter: drop-shadow(0 0 5px #9e3030);
 	color: darkred;
 	width: 160px;
 }
 #submitnew {
 	position: absolute;
-	top: 7px;
-	right: 8px;
-	font-size: 0.6em;
+	top: 50%;
+	right: -36px;
+	transform: translate(-50%,-50%);
 	color: darkred;
 }
 #toggleinput, #submitnew {
@@ -273,7 +281,7 @@ input#addnew {
 #map {
 	position: absolute;
 	margin: 0;
-	top: 178px;
+	top: 186px;
 	bottom: 50px;	
 	left: 0;
 	right: 0;
