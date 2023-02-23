@@ -1,7 +1,7 @@
 ////////////////////////////////////////////
-var urlfetchcsv = "https://ethercalc.net/_/points/csv";
+//var urlfetchcsv = "https://ethercalc.net/_/points/csv";
 //var urlfetchcsv = "https://lite.framacalc.org/_/f5mtflxh78-9zbr/csv";
-//var urlfetchcsv = "src/points.csv";
+var urlfetchcsv = "src/points.csv";
 var urlpostline = "https://ethercalc.net/_/points";
 //var urlpostline = "https://lite.framacalc.org/_/f5mtflxh78-9zbr";
 
@@ -43,8 +43,8 @@ var initPlayerFromUrl = function(url,islive) {
 	GreenAudioPlayer.stopOtherPlayers();
 	if(gPlayer) gPlayer.setCurrentTime(0);
 
-	$(".row").removeClass("onair");
-	$(".row i").removeClass("fa-spin");
+	$(".pt").removeClass("onair");
+	$(".pt i").removeClass("fa-spin");
 
 	$(".player").remove();
 	var pp =$('<div class="player"><audio><source src="'+url+'" type="audio/mpeg"></audio></div>');
@@ -54,9 +54,9 @@ var initPlayerFromUrl = function(url,islive) {
 	$(".control").show();
 
 	if(islive)
-		$(".logo").addClass("live");
+		$(".playstream").addClass("live");
 	else
-		$(".logo").removeClass("live");
+		$(".playstream").removeClass("live");
 };
 ////////////////////////////////////////////
 var addNewPoint = function(text) {
@@ -82,30 +82,44 @@ var addNewPoint = function(text) {
 	});
 };
 ////////////////////////////////////////////
-var fullMarks = null;
 var toggleTag = function(tagelem) {
 	var on = tagelem.hasClass("on");
 	$(".on").removeClass("on");
 	$(".row").show();
-	$(".pt").show();
-	if(!on) {
-		var tg = tagelem.attr("tag");
+	if(on) { // show all, mmmh
+		$.each(localMarkers,function(k,v) {
+			group.removeLayer(v);
+			group.addLayer(v);
+		});
+	};
+	if(!on) { // activate single tag
+		var currentTag = tagelem.attr("tag");
 		tagelem.addClass("on");
 		$(".row").hide();
-		$(".pt").hide();	
-		$(".tagged-"+tg).show();
+		$(".tagged-"+currentTag).show();
+		$.each(localMarkers,function(k,v) {
+			//console.log(v);
+			group.removeLayer(v);
+			// only publish those having current tag
+			if(v.myData.tags.indexOf(currentTag)!=-1) {
+				group.addLayer(v);
+				//console.log("adding:",v);
+			}
+		})
 	}
 	group._zoomend();
+
+	// clicks for radio play, mmmhn agian ?
+	$('.pt button').on('click', function() {
+		console.log("clicked:",$(this));
+		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
+		$(this).parent().parent().addClass("onair");
+	});
 };
-var filterData = function() {
-	if($(".tag.on").length>0) {
-		var currt = $(".tag.on").attr("tag");
-		$(".pt").hide();
-		$(".tagged-"+currt).show();
-	}
-}
 ////////////////////////////////////////////
-var loadData = function () {
+var localMarkers = [];
+var loadData = function() {
+	
 	// MAKE TAGS BAR
 	$.map(tagskeys, function(v,k){
 		var ic = v[1].split(".")[0];
@@ -116,8 +130,6 @@ var loadData = function () {
 		$('.tags').append(tag);
 	});
 
-	// LOAD LIST OF POINTS
-	var p = $('#playlist');
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
 		var icfa = "dot-circle-o"; // default icon if not specified
@@ -127,43 +139,26 @@ var loadData = function () {
 			nsvg = tagskeys[d.tags[0]][2];
 		}
 		var spl = d.text.split(" ");
-		var txtshort = spl.slice(0,2).join(" ");
-		var txtlong = spl.slice(2,-1).join(" ");
+		var txtshort = spl.slice(0,1).join(" ");
+		var txtlong = spl.slice(1).join(" ");
 		var classtags = "tagged-"+d.tags.split("").join(" tagged-");
 
 		//////////////////////////////////////////////////////
-		////////////////// CREATE PLAYLIST DIVs
-		var box = $('<div class="row '+classtags+'"></div>');
-		box.attr("scan",d.text);
-		var na = $('<div class="detail name"></div>').text(txtshort);
-    	var ic = $('<div class="detail icon"><i class="fa fa-fw fa-'+icfa+'"></i></div>');
-		var de = $('<div class="detail descr"></div>').text(txtlong);
-		// icon size and background
-		var rad = Math.floor(35*Math.random());
-		var svg = "svg/p"+nsvg+".svg";
-		ic.attr({
-			link: d.link,
-			style: "background-image:url("+svg+"); border-radius:"+rad+"px;"
-		});
-		box.append(ic).append(na).append(de);
-		p.append(box);
-		ic.on('click', function() {
-			initPlayerFromUrl("files/"+$(this).attr("link")+".mp3");
-			$(this).parent().addClass("onair");
-		});
+		////////////////// CREATE HTML FOR MARKERS DIVs
+		// box.attr("scan",d.text);
+  //   	var ic = $('<div class="detail icon"><i class="fa fa-fw fa-'+icfa+'"></i></div>');
+		// // icon size and background
+		// var rad = Math.floor(35*Math.random());
+		// var svg = "svg/p"+nsvg+".svg";
+		// ic.attr({
+		// 	link: d.link,
+		// 	style: "background-image:url("+svg+"); border-radius:"+rad+"px;"
+		// });
 
-		//////////////////////////////////////////////////////
-		////////////////// CREATE MAP MARKERs
 		var playbutt = "";
-		if(d.link) {
-			var playbic = $('<i class="fa fa-play-circle-o" link="'+d.link+'"></i>');
-			playbic.on('click', function() {
-				initPlayerFromUrl("files/"+$(this).attr("link")+".mp3");
-				$(this).parent().addClass("onair");
-			});
-			playbutt = playbic.prop('outerHTML');
-		}
-		var html = '<div><i class="fa fa-'+icfa+'"></i>'+playbutt+txtshort+" <span>"+txtlong+'</span></div>';
+		if(d.link)
+			playbutt = '<button audio="'+d.link+'"><span class="fa fa-play fa-fw"></span></button> ';
+		var html = '<div><i class="fa fa-'+icfa+'"></i>'+playbutt+txtshort+' <span class="more">'+txtlong+'</span></div>';
 		if(!d.lat) {
 			d.lat = 28.65+0.01*Math.random();
 			d.lng = -17.83+0.01*Math.random();
@@ -180,6 +175,7 @@ var loadData = function () {
 			})
 		});
         marker.myData = d; // hijack the L.Layer object to pass data
+        localMarkers.push(marker);
 		group.addLayer(marker);
 		marker.on("click", function(e){
 			$(e.sourceTarget._icon).toggleClass("pointed");
@@ -189,18 +185,25 @@ var loadData = function () {
 			}
 		});
 	});
-	group.addTo(map);
-	fullMarks = group._markers;
 
-	$(".name").fitText();
+	group.addTo(map);
+
+	//$(".name").fitText();
 
 	initPlayerFromUrl("");
 	$(".controls").hide();
 	$(".loading").hide();
 
+	// clicks for radio play
+	$('.pt button').on('click', function() {
+		console.log("clicked:",$(this));
+		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
+		$(this).parent().parent().addClass("onair");
+	});
+
 	/////////////////////// EVENTs
 	// live radio
-	$('.play').on('click', function() {
+	$('.playstream').on('click', function() {
 		initPlayerFromUrl("http://stream.zeno.fm/kl8i0p0gju4vv",true);
 	});
 	// search filtering
@@ -218,21 +221,13 @@ var loadData = function () {
 		addNewPoint(tt);
 		$("#addnew").val("");
 	});
-	// toggle view
-	$(".toglview").on('click', function() {
-		$(".toglview i").toggleClass("fa-list");
-		$(".toglview i").toggleClass("fa-map");
-		$("#map").toggleClass("hide");
-		$("#playlist").toggleClass("hide");
-	});
+
 	// toggle search / addnew
 	$("#toggleinput").on('click', function() {
 		$("#toggleinput").toggleClass("switched");
 		$(".searcher").toggleClass("hide");
 		$(".adder").toggleClass("hide");
 	});
-
-	$("#playlist").addClass("hide");
 }
 ////////////////////////////////////////////
 var buildMap = function() {
@@ -282,7 +277,7 @@ var buildMap = function() {
         center: [28.671,-17.855],
         zoom: 11,
         minZoom: 10,
-        maxZoom: 15,
+        maxZoom: 17,
         locateButton: true,
         layers: [CartoDB_PositronNoLabels]
 	});
@@ -301,13 +296,13 @@ var buildMap = function() {
 	layerControl.addTo(map);
 
 	map.on('click', function(e) {
-		var gps = e.latlng.lat.toFixed(4)+";"+e.latlng.lng.toFixed(4);
-		console.log(gps);
+		var gps = e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4);
+		console.log("230223,1,"+gps+",,");
 		// close all popups
 		$(".pointed").removeClass("pointed");
 	});
 	map.on('zoomend', function(e) {
-		filterData();
+
 	});
 };
 ////////////////////////////////////////////
@@ -318,6 +313,9 @@ window.addEventListener('load', function() {
 	// splash about screen
 	$.get("README.md", function(data) {
 		$(".about .introduction").html(marked.parse(data));
+	});
+	$(".about").on('click', function(e) {
+		$(".about").hide();
 	});
 	$(".about i.fa-close").on('click', function(e) {
 		$(".about").hide();

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3D Map</title>
+
+	<script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/jquery.csv.min.js"></script>
+	<script src="src/map.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"></link>
+	<link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' type="text/css" rel='stylesheet' />
+	
+	<style>
+		body { margin: 0; padding: 0; }
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+		.marker {
+			display: block;
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+</body>
+</html>

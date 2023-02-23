@@ -1,35 +1,21 @@
-#¡ bienvenid@ !
-## que es eso ?
-radio alma es una lijera herramienta
-que nos permite compartir y dar a ver
-la riqueza multidisciplinar cosmopolita
-de la gente real viviendo simpatica  
-sobre la isla de La Palma
 
-experimentamos mesclas finas
-de politica digital en media natural
+# Bienvenid@ a __radio alma__
 
-## a que sirve ?
+## qué es
 
-## como functiona ?
+- un _espacio_ para conocer y compartir los tesoros naturales de la isla de La Palma
+- un _tablón digital_ que muestra la viveza existente en la isla
+- una _nube radiofónica_ compartida
+- un _mosaico literario_
+- **desea** la unión
+- **enciende** la chispa comunal desde la motivación individual
+- **quiere** dar luz a las cualidades que somos y experimentamos
 
-## donde estamos ?
+## línea editorial
+- promoción local, valorar tu alrededor
+- construir una identidad común en herencia
+- facilitar la expresión del néctar de la co-creación
+- medio participativo y libertad de expresíon
+- forum de debate y comunicación no violenta
 
-## quien hace la playlist ?
-
-## como participar ?
-
-## linea editorial
-promovemos la libertad de expresion hacia que no duala a nadie
-existen herramientas  para resolver conflictos
-- comunication non violenta
-- forum de discussion en linea
-
-
-## thanks & credit to
-
-- leaflet and plugins
-- https://github.com/greghub/green-audio-player
-- https://github.com/nachtfunke/basic-pattern-repository
-
-■ □ ▢ ▣ ▤ ▥ ▦ ▧ ▨ ▩ ▪ ▫ ▬ ▭ ▮ ▯ ▰ ▱ ▲ △ ▴ ▵ ▶ ▷ ▸ ▹ ► ▻ ▼ ▽ ▾ ▿ ◀ ◁ ◂ ◃ ◄ ◅ ◆ ◇ ◈ ◉ ◊ ○ ◌ ◍ ◎ ● ◐ ◑ ◒ ◓ ◔ ◕ ◖ ◗ ◘ ◙ ◚ ◛ ◜ ◝ ◞ ◟ ◠ ◡ ◢ ◣ ◤ ◥ ◦ ◧ ◨ ◩ ◪ ◫ ◬ ◭ ◮ ◯ ✁ ✂ ✃ ✄ ✆ ✇ ✈ ✉ ✌ ✍ ✎ ✏ ✐ ✑ ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟ ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿ ❀ ❁ ❂ ❃ ❄ ❅ ❆ ❇ ❈ ❉ ❊ ❋ ❍ ❏ ❐ ❑ ❒ ❖ ❘ ❙ ❚ ❛ ❜ ❝ ❞ ❡ ❢ ❣ ❤ ❥ ❦ ❧ ❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿ ➀ ➁ ➂ ➃ ➄ ➅ ➆ ➇ ➈ ➉ ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒ ➓ ➘ ➙ ➚ ➛ ➜ ➝ ➞ ➟ ➠ ➡ ➢ ➣ ➤ ➥ ➦ ➧ ➨ ➩ ➪ ➫ ➬ ➭ ➮ ➯ ➲ ➳ ➴ ➵ ➶ ➷ ➸ ➹ ➺ ➻ ➼ ➽ ➾ ☀ ☁ ☂ ☃ ☄ ★ ☆ ☇ ☈ ☉ ☊ ☋ ☌ ☍ ☎ ☏ ☐ ☑ ☒ ☓ ☖ ☗ ☚ ☛ ☜ ☝ ☞ ☟ ☠ ☡ ☢ ☣ ☤ ☥ ☦ ☧ ☨ ☩ ☪ ☫ ☬ ☭ ☮ ☯ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷ ☸ ☹ ☺ ☻ ☼ ☽ ☾ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆ ♇ ♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓ ♔ ♕ ♖ ♗ ♘ ♙ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♡ ♢ ♣ ♤ ♥ ♦ ♧ ♨ ♩ ♪ ♫ ♬ ♭ ♮ ♯ ♰ ♱ Ợᗫᚧ Θ❡⊛꩜ゟ
+para participar, contáctanos por [aquí](mailto:alma.palma.radio@gmail.com)
