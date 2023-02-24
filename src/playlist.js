@@ -7,7 +7,8 @@ var urlpostline = "https://ethercalc.net/_/points";
 
 var gPlayer = null ;
 var map = null ;
-var scount = 0;
+var puerta = false;
+var puertacount = 1;
 ////////////////////////////////////////////
 // we will parse text based on keys
 var tagskeys = {
@@ -210,9 +211,9 @@ var loadData = function() {
 		initPlayerFromUrl("http://stream.zeno.fm/kl8i0p0gju4vv",true);
 	});
 	// search filtering
-	$('#search').on('input', function() {
+	$('#search').on('submit', function() {
 		var s = $(this).val();
-		//console.log(s);   
+		console.log(s);   
 		$('.row').each(function(i, e) {
 			if($(e).attr("scan").indexOf(s)>=0) $(e).show();
 			else $(e).hide();
@@ -317,24 +318,22 @@ window.addEventListener('load', function() {
 	$.get("README.md", function(data) {
 		$(".about .introduction").html(marked.parse(data));
 	});
-	$(".about").on('click', function(e) {
-		$(".about").hide();
+	$(".cc").on('click', function(e) {
+		puertacount++;
+		if(puertacount>0)
+			puerta = true;
 	});
-	$(".about i.fa-close").on('click', function(e) {
-		$(".about").hide();
+	$(".about").on('click', function(e) {
+		if(puerta) $(".about").hide();
+	});
+	$(".header").on('click', function(e) {
+		if(puerta) $(".about").hide();
 	});
 	$(".toglabout").on('click', function(e) {
 		$(".about").show();
+		event.stopPropagation();
 	});
 	$(".about").hide();
-
-	// $(".toglview").hide();
-	// $(".hleft").on('click', function(e) {
-	// 	scount+=1;
-	// 	if(scount>3)
-	// 		$(".toglview").show();
-	// });
-	
 	buildMap();
 
 	$.ajax({

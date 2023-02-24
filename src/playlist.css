@@ -47,27 +47,32 @@ html, body {
 .about {
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 100px;
 	bottom: 0;
 	right: 0;
-	padding: 20px;
+	padding: 0px 20px;
 	text-align: left;
 	background: var(--pyellow);
 	z-index: 9999999;
 	overflow-y: scroll;
 }
-.about ul {
-	list-style-type: none;
-}
-.about i.fa-close {
+.about .icons {
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
+	left: 5px;
+	top: 15px;
 	font-size: 1.4em;
 }
-.about i {
+.about .icons i {
 	float: right;
+	padding: 3px;
+}
+.about .introduction {
+	margin-left: 30px;
+	font-style: italic;
+}
+.about ul {
+	list-style-type: none;
+	padding: 0;
 }
 /* ===================================== */
 .header {
@@ -95,32 +100,23 @@ html, body {
 	filter: drop-shadow(0 0 25px #729c16);
 	margin-top: 10px;
 }
-.hleft, .hright {
-
-}
 .hleft {
 	left:0;
 }
-.hright {
-
+.toglabout {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translate(0,-50%);
+	color: var(--lblack);
+	cursor: pointer;
+	font-size: 0.7em;
 }
 .moto {
 	font-family: 'Dancing Script', cursive;
 	font-size: 0.9em;
 	font-style: italic;
 	color: var(--lverde);
-}
-/* ===================================== */
-.butt {
-	position: absolute;
-	top: 10px;
-	color: var(--lblack);
-	cursor: pointer;
-	font-size: 1.7em;
-}
-.toglabout {
-	right: 10px;
-	/*transform: translate(-50%,-50%);*/	
 }
 /* ===================================== */
 .playstream {

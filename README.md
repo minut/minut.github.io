@@ -1,12 +1,8 @@
 
-# bienvenid@ a __radio alma__
-
-## qué es
-
-- un _espacio_ para conocer y compartir los tesoros naturales de la isla de La Palma
-- un _tablón digital_ que muestra la viveza existente en la isla
-- una _nube radiofónica_ compartida
-- un _mosaico literario_
+- un **espacio** para conocer y compartir los tesoros naturales de la isla de La Palma
+- un **tablón digital** que muestra la viveza existente en la isla
+- una **nube radiofónica** compartida
+- un **mosaico literario**
 - **desea** la unión
 - **enciende** la chispa comunal desde la motivación individual
 - **quiere** dar luz a las cualidades que somos y experimentamos
