@@ -8,38 +8,62 @@ var urlpostline = "https://ethercalc.net/_/points";
 var gPlayer = null ;
 var map = null ;
 var scount = 0;
-
-const group = L.inflatableMarkersGroup({
-	iconCreateFunction: function (icon) {
-		const dat = icon.baseMarker.myData;
-		return L.divIcon({
-			html: '<div><i class="fa fa-asterisk"></i></div>',
-			iconSize: [20,20],
-			iconAnchor:[0,0],
-			className: "pt deflated"
-		});
-	}
-});
-
 ////////////////////////////////////////////
 // we will parse text based on keys
 var tagskeys = {
-	"Q":["Que ?","question-circle",80],
-	"E":["Encontrar","calendar-o.clock-o",79],
-	"I":["fIncas","podcast.home.street-view",82],
-	"C":["Comprar tiendas","shopping-basket.calculator",84],
-	"A":["cuidAr plantas y animales","pagelines",89],
-	"D":["desconociDo","compass.sun-o",87],
-	"S":["Salvar cosas","recycle.suitcase.wrench.pie-chart",85],
-	"T":["idea debaTir politica","commenting.stack-exchange.dot-circle-o.bolt.exclamation-circle.remove.spinner.cogs",86],
-	"M":["viaje coMpartido","truck.car.bus.thumbs-o-up",77],
-	"O":["sOñar","music.headphones.eye",89],
-	"F":["oFresco","gift.smile-o.heart",83],
-	"B":["Busco","life-ring.meh-o.frown-o.search.heart-o.heartbeat",78]
+	//"Q":["Que ?","question-circle",80,0],
+	"E":["Encontrar","calendar-o.clock-o",79,0],
+	"I":["fIncas","podcast.home.street-view",82,0],
+	"M":["Mover","truck.car.bus.thumbs-o-up",77,0],
+	"C":["Comprar","shopping-basket.calculator",84,0],
+	"S":["Salvar","recycle.suitcase.wrench.pie-chart",85,0],
+	"A":["plAntas y animales","pagelines",89,0],
+	//"D":["desconociDo","compass.sun-o",87,0],
+	"T":["debaTir idea","commenting.stack-exchange.dot-circle-o.bolt.exclamation-circle.remove.spinner.cogs",86,0],
+	"O":["sOñar","music.headphones.eye",89,0],
+	"F":["oFresco","heart.hand-paper-o.gift.smile-o",83,0],
+	"B":["Busco","life-ring.meh-o.frown-o.search.heart-o.heartbeat",78,0]
 	};
 ////////////////////////////////////////////
+var buildMarkerClass = function(d,more) {
+	var classtags = "tagged-"+d.tags.split("").join(" tagged-");
+	return classtags+' pt '+more;
+}
+var buildMarkerHtml = function(d) {
+		var icfa = "dot-circle-o"; // default if tag not recognized
+		if(tagskeys.hasOwnProperty(d.tags[0])) {
+			icfa = tagskeys[d.tags[0]][1].split(".")[0];
+			//var nsvg = 77 + i%15;
+			//nsvg = tagskeys[d.tags[0]][2];
+			//svg = "svg/p"+nsvg+".svg"; // "background-image:url("+svg+");
+			// keep total for each tag
+			tagskeys[d.tags[0]][3]++;
+		}
+		var spl = d.text.split(" ");
+		var txtshort = spl.slice(0,1).join(" ");
+		var txtlong = spl.slice(1).join(" ");
+		// O simple icon
+		var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
+		// O button icon for audio play
+		if(d.link)
+			ihtml = '<button audio="'+d.link+'">'+ihtml+'</button> ';
+
+		return '<div>'+ihtml+txtshort+' <span class="more">'+txtlong+'</span></div>';
+};
+
+const group = L.inflatableMarkersGroup({
+	iconCreateFunction: function (icon) {
+		return L.divIcon({
+			html: buildMarkerHtml(icon.baseMarker.myData),
+			iconSize: [20,20],
+			iconAnchor:[0,0],
+			className: buildMarkerClass(icon.baseMarker.myData,"deflated")
+		});
+	}
+});
+////////////////////////////////////////////
 var initPlayerFromUrl = function(url,islive) {
-	console.log("will load audio url:",url);
+	console.log("startplayer:",url);
 	GreenAudioPlayer.stopOtherPlayers();
 	if(gPlayer) gPlayer.setCurrentTime(0);
 
@@ -132,33 +156,6 @@ var loadData = function() {
 
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
-		var icfa = "dot-circle-o"; // default icon if not specified
-		var nsvg = 77 + i%15;
-		if(tagskeys.hasOwnProperty(d.tags[0])) {
-			icfa = tagskeys[d.tags[0]][1].split(".")[0];
-			nsvg = tagskeys[d.tags[0]][2];
-		}
-		var spl = d.text.split(" ");
-		var txtshort = spl.slice(0,1).join(" ");
-		var txtlong = spl.slice(1).join(" ");
-		var classtags = "tagged-"+d.tags.split("").join(" tagged-");
-
-		//////////////////////////////////////////////////////
-		////////////////// CREATE HTML FOR MARKERS DIVs
-		// box.attr("scan",d.text);
-  //   	var ic = $('<div class="detail icon"><i class="fa fa-fw fa-'+icfa+'"></i></div>');
-		// // icon size and background
-		// var rad = Math.floor(35*Math.random());
-		// var svg = "svg/p"+nsvg+".svg";
-		// ic.attr({
-		// 	link: d.link,
-		// 	style: "background-image:url("+svg+"); border-radius:"+rad+"px;"
-		// });
-
-		var playbutt = "";
-		if(d.link)
-			playbutt = '<button audio="'+d.link+'"><span class="fa fa-play fa-fw"></span></button> ';
-		var html = '<div><i class="fa fa-'+icfa+'"></i>'+playbutt+txtshort+' <span class="more">'+txtlong+'</span></div>';
 		if(!d.lat) {
 			d.lat = 28.65+0.01*Math.random();
 			d.lng = -17.83+0.01*Math.random();
@@ -168,21 +165,21 @@ var loadData = function() {
 		}
 		const marker = L.marker([d.lat,d.lng], {
 			icon: L.divIcon({
-				html: html,
+				html: buildMarkerHtml(d),
 				iconSize:[40,40], // this value is necessary for this plugin
 				iconAnchor:[0,0],
-				className: classtags+' pt inflated ',
+				className: buildMarkerClass(d,"inflated"),
 			})
 		});
         marker.myData = d; // hijack the L.Layer object to pass data
         localMarkers.push(marker);
 		group.addLayer(marker);
 		marker.on("click", function(e){
-			$(e.sourceTarget._icon).toggleClass("pointed");
 			var cluster = $(e.sourceTarget._icon).hasClass("deflated");
-			if(cluster) {
+			if(cluster) // we zoom in
 				map.setZoomAround(e.latlng,map.getZoom()+1);
-			}
+			else // we toggle open
+				$(e.sourceTarget._icon).toggleClass("opened");
 		});
 	});
 
@@ -194,6 +191,12 @@ var loadData = function() {
 	$(".controls").hide();
 	$(".loading").hide();
 
+	// stats for tag bar
+	$('.tag').each(function(e) {
+		var t = $(this).attr("tag");
+		$(this).append($('<span class="stat">'+tagskeys[t][3]+'</span>'));
+	})
+	
 	// clicks for radio play
 	$('.pt button').on('click', function() {
 		console.log("clicked:",$(this));
@@ -299,7 +302,7 @@ var buildMap = function() {
 		var gps = e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4);
 		console.log("230223,1,"+gps+",,");
 		// close all popups
-		$(".pointed").removeClass("pointed");
+		$(".opened").removeClass("opened");
 	});
 	map.on('zoomend', function(e) {
 
@@ -308,7 +311,7 @@ var buildMap = function() {
 ////////////////////////////////////////////
 window.addEventListener('load', function() { 
 
-	console.log("welcome");
+	console.log("welcome home.");
 
 	// splash about screen
 	$.get("README.md", function(data) {

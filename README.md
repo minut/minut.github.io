@@ -1,5 +1,5 @@
 
-# Bienvenid@ a __radio alma__
+# bienvenid@ a __radio alma__
 
 ## qué es
 
