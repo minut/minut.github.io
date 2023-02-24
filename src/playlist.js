@@ -9,6 +9,8 @@ var gPlayer = null ;
 var map = null ;
 var puerta = false;
 var puertacount = 1;
+var playlistTotal = 0;
+var playlistCurrent = 0;
 ////////////////////////////////////////////
 // we will parse text based on keys
 var tagskeys = {
@@ -31,28 +33,28 @@ var buildMarkerClass = function(d,more) {
 	return classtags+' pt '+more;
 }
 var buildMarkerHtml = function(d) {
-		var icfa = "dot-circle-o"; // default if tag not recognized
-		if(tagskeys.hasOwnProperty(d.tags[0])) {
-			icfa = tagskeys[d.tags[0]][1].split(".")[0];
-			//var nsvg = 77 + i%15;
-			//nsvg = tagskeys[d.tags[0]][2];
-			//svg = "svg/p"+nsvg+".svg"; // "background-image:url("+svg+");
-			// keep total for each tag
-			tagskeys[d.tags[0]][3]++;
-		}
-		var spl = d.text.split(" ");
-		var txtshort = spl.slice(0,1).join(" ");
-		var txtlong = spl.slice(1).join(" ");
-		// O simple icon
-		var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
-		// O button icon for audio play
-		if(d.file) {
-			ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'</span> ';
-		}
+	var icfa = "dot-circle-o"; // default if tag not recognized
+	if(tagskeys.hasOwnProperty(d.tags[0])) {
+		icfa = tagskeys[d.tags[0]][1].split(".")[0];
+		//var nsvg = 77 + i%15;
+		//nsvg = tagskeys[d.tags[0]][2];
+		//svg = "svg/p"+nsvg+".svg"; // "background-image:url("+svg+");
+		// keep total for each tag
+		tagskeys[d.tags[0]][3]++;
+	}
+	var spl = d.text.split(" ");
+	var txtshort = spl.slice(0,1).join(" ");
+	var txtlong = spl.slice(1).join(" ");
+	// O simple icon
+	var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
+	// O button icon for audio play
+	if(d.file) {
+		ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'</span> ';
+	}
 
-		return '<div>'+ihtml+txtshort+' <span class="more">'+txtlong+'</span></div>';
+	return '<div>'+ihtml+txtshort+' <span class="more">'+txtlong+'</span></div>';
 };
-
+////////////////////////////////////////////
 const group = L.inflatableMarkersGroup({
 	iconCreateFunction: function (icon) {
 		return L.divIcon({
@@ -78,6 +80,10 @@ var initPlayerFromUrl = function(url,islive) {
 	gPlayer = new GreenAudioPlayer(".player", {"autoplay":true});
 	gPlayer.togglePlay();
 	$(".control").show();
+
+	$(".player").on("ended", function() {
+		console.log("next song ?");
+	});
 
 	if(islive)
 		$(".playstream").addClass("live");
@@ -108,6 +114,18 @@ var addNewPoint = function(text) {
 	});
 };
 ////////////////////////////////////////////
+var refreshAudioButtons = function() {
+	setTimeout(function func() {
+		console.log("plugging buttons");
+		$('.pt.inflated button').on('click', function() {
+			console.log("clicked:",$(this));
+			initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
+			$(this).parent().parent().addClass("onair");
+			event.stopPropagation();
+		});
+	}, 500);
+};
+////////////////////////////////////////////
 var toggleTag = function(tagelem) {
 	var on = tagelem.hasClass("on");
 	$(".on").removeClass("on");
@@ -134,20 +152,14 @@ var toggleTag = function(tagelem) {
 		})
 	}
 	group._zoomend();
-
-	// clicks for radio play, mmmhn agian ?
-	$('.pt button').on('click', function() {
-		console.log("clicked:",$(this));
-		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
-		$(this).parent().parent().addClass("onair");
-	});
+	refreshAudioButtons();
 };
 ////////////////////////////////////////////
 var localMarkers = [];
 var instantiateTodo = function() {
 	
 	buildMap();
-	
+
 	// MAKE TAGS BAR
 	$.map(tagskeys, function(v,k){
 		var ic = v[1].split(".")[0];
@@ -161,8 +173,8 @@ var instantiateTodo = function() {
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
-			d.lat = 28.65+0.14*Math.random();
-			d.lng = -17.83+0.14*Math.random();
+			d.lat = 28.49+0.5*Math.random();
+			d.lng = -18.09+0.3*Math.random();
 		} else {
 			d.lat = +d.lat;
 			d.lng = +d.lng;
@@ -229,12 +241,8 @@ var instantiateTodo = function() {
 		$(".adder").toggleClass("hide");
 	});
 
-	// clicks for radio play
-	$('.pt button').on('click', function() {
-		console.log("clicked:",$(this));
-		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
-		$(this).parent().parent().addClass("onair");
-	});
+	refreshAudioButtons();
+
 }
 ////////////////////////////////////////////
 var buildMap = function() {
@@ -277,27 +285,31 @@ var buildMap = function() {
 		subdomains: 'abcd',
 		maxZoom: 20
 	});
+	var corner1 = L.latLng(27.671,-18.855),
+	corner2 = L.latLng(29.671,-16.855),
+	maxbounds = L.latLngBounds(corner1, corner2);
 	map = L.map('map',{
 		zoomControl: true,
         scrollWheelZoom: true,
         doubleClickZoom: false,
         center: [28.671,-17.855],
-        zoom: 11,
-        minZoom: 10,
-        maxZoom: 17,
+        zoom: 9,
+        minZoom: 8,
+        maxZoom: 13,
         locateButton: true,
-        layers: [CartoDB_PositronNoLabels]
+        layers: [CartoDB_PositronNoLabels],
+        maxBounds: maxbounds
 	});
 	var tileLayers = {
-		"Stadia_AlidadeSmooth": Stadia_AlidadeSmooth,
-		"Stadia_AlidadeSmoothDark": Stadia_AlidadeSmoothDark,
-		"OpenTopoMap": OpenTopoMap,
-		"Thunderforest_Outdoors": Thunderforest_Outdoors,
-		"Thunderforest_Pioneer": Thunderforest_Pioneer,
-		"CyclOSM": CyclOSM,
-		"CartoDB_PositronNoLabels": CartoDB_PositronNoLabels,
-		"Esri_WorldImagery": Esri_WorldImagery,
-		"CartoDB_Positron": CartoDB_Positron
+		// "Stadia_AlidadeSmooth": Stadia_AlidadeSmooth,
+		// "Stadia_AlidadeSmoothDark": Stadia_AlidadeSmoothDark,
+		// "OpenTopoMap": OpenTopoMap,
+		// "Thunderforest_Outdoors": Thunderforest_Outdoors,
+		// "Thunderforest_Pioneer": Thunderforest_Pioneer,
+		// "CyclOSM": CyclOSM,
+		// "CartoDB_Positron": CartoDB_Positron,
+		"papel": CartoDB_PositronNoLabels,
+		"photo": Esri_WorldImagery,
 	};
 	var layerControl = L.control.layers(tileLayers, null, {position: 'topleft'});
 	layerControl.addTo(map);
@@ -309,7 +321,7 @@ var buildMap = function() {
 		$(".opened").removeClass("opened");
 	});
 	map.on('zoomend', function(e) {
-
+		refreshAudioButtons();
 	});
 };
 ////////////////////////////////////////////
@@ -336,7 +348,8 @@ window.addEventListener('load', function() {
 		$(".about").show();
 		event.stopPropagation();
 	});
-	$(".about").hide();
+	
+	//$(".about").hide();
 
 	$.ajax({
 		url: urlfetchcsv,
