@@ -204,11 +204,12 @@ input#addnew {
 /* ===================================== */
 .tags {
 	margin-bottom: 10px;
+	font-size: 1.1em;
 }
 .tag {
-	padding: 3px 3px;
+	padding: 5px;
 	margin: 1px;
-	border-radius: 7px;
+	border-radius: 12px;
 	color: lightgray;
 	/*filter: drop-shadow(0 0 2px #4d4d4d);*/
 	z-index: 99999;
@@ -218,7 +219,7 @@ input#addnew {
 }
 .tag .stat {
 	position: absolute;
-	top: 22px;
+	top: 3.3em;
 	left: 50%;
 	font-size: 0.5em;
 	text-align: center;
@@ -233,6 +234,19 @@ input#addnew {
 
 }
 /* ===================================== */
+.leaflet-control-attribution {
+	font-size: 0.7em;
+	opacity: 0.3;
+	pointer-events: none;
+}
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px;
+  height: 30px;
+}
+.leaflet-retina .leaflet-control-layers-toggle {
+  background-image: url(../css/images/layers.png);
+  background-size: 18px 18px;
+}
 #map {
 	position: absolute;
 	margin: 0;
@@ -265,6 +279,10 @@ input#addnew {
 	padding: 4px 2px 4px 6px;
 	border-radius: 20px;
 	font-size: 0.8em;
+}
+.pt span.dur {
+	font-size: 0.7em;
+	color: grey;
 }
 .pt i {
 	margin-right: 4px;

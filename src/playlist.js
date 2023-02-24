@@ -46,8 +46,9 @@ var buildMarkerHtml = function(d) {
 		// O simple icon
 		var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
 		// O button icon for audio play
-		if(d.link)
-			ihtml = '<button audio="'+d.link+'">'+ihtml+'</button> ';
+		if(d.file) {
+			ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'</span> ';
+		}
 
 		return '<div>'+ihtml+txtshort+' <span class="more">'+txtlong+'</span></div>';
 };
@@ -143,7 +144,9 @@ var toggleTag = function(tagelem) {
 };
 ////////////////////////////////////////////
 var localMarkers = [];
-var loadData = function() {
+var instantiateTodo = function() {
+	
+	buildMap();
 	
 	// MAKE TAGS BAR
 	$.map(tagskeys, function(v,k){
@@ -158,8 +161,8 @@ var loadData = function() {
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
-			d.lat = 28.65+0.01*Math.random();
-			d.lng = -17.83+0.01*Math.random();
+			d.lat = 28.65+0.14*Math.random();
+			d.lng = -17.83+0.14*Math.random();
 		} else {
 			d.lat = +d.lat;
 			d.lng = +d.lng;
@@ -197,13 +200,6 @@ var loadData = function() {
 		var t = $(this).attr("tag");
 		$(this).append($('<span class="stat">'+tagskeys[t][3]+'</span>'));
 	})
-	
-	// clicks for radio play
-	$('.pt button').on('click', function() {
-		console.log("clicked:",$(this));
-		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
-		$(this).parent().parent().addClass("onair");
-	});
 
 	/////////////////////// EVENTs
 	// live radio
@@ -231,6 +227,13 @@ var loadData = function() {
 		$("#toggleinput").toggleClass("switched");
 		$(".searcher").toggleClass("hide");
 		$(".adder").toggleClass("hide");
+	});
+
+	// clicks for radio play
+	$('.pt button').on('click', function() {
+		console.log("clicked:",$(this));
+		initPlayerFromUrl("files/"+$(this).attr("audio")+".mp3");
+		$(this).parent().parent().addClass("onair");
 	});
 }
 ////////////////////////////////////////////
@@ -334,7 +337,6 @@ window.addEventListener('load', function() {
 		event.stopPropagation();
 	});
 	$(".about").hide();
-	buildMap();
 
 	$.ajax({
 		url: urlfetchcsv,
@@ -343,7 +345,7 @@ window.addEventListener('load', function() {
 			data = $.csv.toObjects(csvd);
 		},
 		dataType: "text",
-		complete: loadData
+		complete: instantiateTodo
 	});
 
 }, false);
