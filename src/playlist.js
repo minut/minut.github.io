@@ -169,12 +169,14 @@ var instantiateTodo = function() {
 		});
 		$('.tags').append(tag);
 	});
-
+	var ic = 0;
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
-			d.lat = 28.49+0.5*Math.random();
-			d.lng = -18.09+0.3*Math.random();
+			var ang = ((ic++)%50)*360;//*Math.random();
+			var rad = 0.7+0.3*Math.random();
+			d.lat = 28.9+rad*Math.cos(ang);
+			d.lng = -18.2+rad*Math.sin(ang);
 		} else {
 			d.lat = +d.lat;
 			d.lng = +d.lng;
@@ -339,9 +341,6 @@ window.addEventListener('load', function() {
 			puerta = true;
 	});
 	$(".about").on('click', function(e) {
-		if(puerta) $(".about").hide();
-	});
-	$(".header").on('click', function(e) {
 		if(puerta) $(".about").hide();
 	});
 	$(".toglabout").on('click', function(e) {
