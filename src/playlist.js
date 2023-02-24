@@ -26,7 +26,7 @@ var tagskeys = {
 	"O":["sOñar","music.headphones.eye",89,0],
 	"F":["oFresco","heart.hand-paper-o.gift.smile-o",83,0],
 	"B":["Busco","life-ring.meh-o.frown-o.search.heart-o.heartbeat",78,0]
-	};
+};
 ////////////////////////////////////////////
 var buildMarkerClass = function(d,more) {
 	var classtags = "tagged-"+d.tags.split("").join(" tagged-");
@@ -174,7 +174,7 @@ var instantiateTodo = function() {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
 			var ang = ((ic++)%50)*360;//*Math.random();
-			var rad = 0.7+0.3*Math.random();
+			var rad = 0.7+0.2*Math.random();
 			d.lat = 28.9+rad*Math.cos(ang);
 			d.lng = -18.2+rad*Math.sin(ang);
 		} else {
