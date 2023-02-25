@@ -28,9 +28,10 @@ window.addEventListener('load', function() {
 		style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
 		//? style: `https://api.maptiler.com/tiles/satellite-mediumres-2018/tiles.json?key=${API_KEY}`,
 		//NOTFOUND style: `https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=${API_KEY}`,
-		center: [-17.855,28.671],
-		zoom: 12,
-		pitch: 10,
+		center: [-17.938,28.795],
+		zoom: 16,
+		pitch: 120,
+		bearing: 140,
 		//maxPitch: 85,
 		maxBounds: bounds // Sets bounds as max
 	});
@@ -56,14 +57,40 @@ window.addEventListener('load', function() {
 				'line-width': 1
 			}
 		});
+		map.addSource('wms-test-source', {
+			'type': 'raster',
+			// 'tiles': ['https://img.nj.gov/imagerywms/Natural2015?bbox={bbox-epsg-3857}&format=image/png&service=WMS&version=1.1.1&request=GetMap&srs=EPSG:3857&transparent=true&width=256&height=256&layers=Natural2015'],
+			'tiles': ['https://idecan3.grafcan.es/ServicioWMS/OrtoExpress_bat?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&format=image/png&TRANSPARENT=false&LAYERS=WMS_OrtoExpress&SRS=EPSG:3857&WIDTH=256&HEIGHT=256&STYLES=&BBOX={bbox-epsg-3857}'],
+			// 'tiles': ['https://idecan3.grafcan.es/ServicioWMS/OrtoExpress_bat?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fjpeg&TRANSPARENT=false&LAYERS=WMS_OrtoExpress&SRS=EPSG%3A32628&WIDTH=256&HEIGHT=256&STYLES=&BBOX={bbox-epsg-32628}'],
+			'tileSize': 256
+		});
+		map.addLayer({
+			'id': 'wms-test-layer',
+			'type': 'raster',
+			'source': 'wms-test-source',
+			'paint': {}//{'hillshade-shadow-color': '#473B24'}
+		},
+		'aeroway_fill');
+
 		map.addSource("terrain", {
 			"type": "raster-dem",
-			//"url": `https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=${API_KEY}`
+			//"url": 'https://demotiles.maplibre.org/terrain-tiles/tiles.json',
+			"url": `https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=${API_KEY}`
 			//"url": `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${API_KEY}`
-			"url": `https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/tiles.json?key=${API_KEY}`
+			//"url": `https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/tiles.json?key=${API_KEY}`
 		});
 		map.setTerrain({
 			source: "terrain"
+		});
+		map.addControl(
+			new maplibregl.TerrainControl({
+				source: 'terrain',
+				exaggeration: 1
+			})
+		);
+
+		map.on('click', function(e) {
+			console.log('click:',e.lngLat.lng.toFixed(4)+","+e.lngLat.lat.toFixed(4));
 		});
 
 		var urlfetchcsv = "src/points.csv";

@@ -6,7 +6,8 @@ var urlpostline = "https://ethercalc.net/_/points";
 //var urlpostline = "https://lite.framacalc.org/_/f5mtflxh78-9zbr";
 
 var gPlayer = null ;
-var map = null ;
+var map = null;
+var layergr = null;
 var puerta = false;
 var puertacount = 1;
 var playlistTotal = 0;
@@ -58,10 +59,10 @@ var buildMarkerHtml = function(d) {
 const group = L.inflatableMarkersGroup({
 	iconCreateFunction: function (icon) {
 		return L.divIcon({
-			html: buildMarkerHtml(icon.baseMarker.myData),
+			html: buildMarkerHtml(icon.baseMarker.options.myData),
 			iconSize: [20,20],
 			iconAnchor:[0,0],
-			className: buildMarkerClass(icon.baseMarker.myData,"deflated")
+			className: buildMarkerClass(icon.baseMarker.options.myData,"deflated")
 		});
 	}
 });
@@ -102,17 +103,46 @@ var addNewPoint = function(text) {
 	var lat = map.getCenter().lat.toFixed(3);
 	var lng = map.getCenter().lng.toFixed(3);
 	var tronco = "230218,1,"+lat+","+lng+","+tgs+","+text;
+	// $.ajax({
+	// 	type: 'POST',
+	// 	url: urlpostline,
+	// 	dataType: 'application/json',
+	// 	contentType: 'text/csv',
+	// 	processData: false,
+	// 	data: tronco
+	// }).fail(function() {
+	// 	//alert("error");
+	// });
 	$.ajax({
 		type: 'POST',
-		url: urlpostline,
+		url: 'https://eu-central-1.aws.data.mongodb-api.com/app/data-fzstk/endpoint/data/v1/action/insertOne',
 		dataType: 'application/json',
-		contentType: 'text/csv',
-		processData: false,
-		data: tronco
-	}).fail(function() {
-		//alert("error");
+		contentType: 'application/json',
+		headers: {
+			'Origin': "46.222.16.65",
+			'Content-Type': 'application/json',
+			'Access-Control-Request-Headers': '*',
+			'Access-Control-Allow-Origin': '*',
+			'api-key': 'EFGR1kttMZR54Zn26nzbFUxkj3BKGw2fQeNbhGrX4Fuo0sLt2qcL4iq0GwpwR0ky'
+		},
+		data: {
+			"dataSource": "ClusterMong",
+			"database": "db_alma",
+			"collection": "radio",
+			"document": {
+				"lat": lat,
+				"lng": lng,
+				"tags": tgs,
+				"text": text,
+				"date": "23.02.25"
+			}
+		},
+		success: function(r) {
+			console.log("POST",r);
+		}
 	});
 };
+
 ////////////////////////////////////////////
 var refreshAudioButtons = function() {
 	setTimeout(function func() {
@@ -145,7 +175,7 @@ var toggleTag = function(tagelem) {
 			//console.log(v);
 			group.removeLayer(v);
 			// only publish those having current tag
-			if(v.myData.tags.indexOf(currentTag)!=-1) {
+			if(v.options.myData.tags.indexOf(currentTag)!=-1) {
 				group.addLayer(v);
 				//console.log("adding:",v);
 			}
@@ -173,10 +203,10 @@ var instantiateTodo = function() {
 	data.forEach(function(d,i) {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
-			var ang = ((ic++)%50)*360;//*Math.random();
-			var rad = 0.7+0.2*Math.random();
-			d.lat = 28.9+rad*Math.cos(ang);
-			d.lng = -18.2+rad*Math.sin(ang);
+			var ang = ((ic++)%50)*360;
+			var rad = 0.4+0.2*Math.random();
+			d.lat = 28.7+rad*Math.cos(ang);
+			d.lng = -18+rad*Math.sin(ang);
 		} else {
 			d.lat = +d.lat;
 			d.lng = +d.lng;
@@ -187,9 +217,12 @@ var instantiateTodo = function() {
 				iconSize:[40,40], // this value is necessary for this plugin
 				iconAnchor:[0,0],
 				className: buildMarkerClass(d,"inflated"),
+				title: d.text
 			})
 		});
-        marker.myData = d; // hijack the L.Layer object to pass data
+		//console.log(marker);
+        marker.options.myData = d; // hijack the L.Layer object to pass data
+        //marker.feature = {'title':d.text};
         localMarkers.push(marker);
 		group.addLayer(marker);
 		marker.on("click", function(e){
@@ -202,6 +235,7 @@ var instantiateTodo = function() {
 	});
 
 	group.addTo(map);
+	
 
 	//$(".name").fitText();
 
@@ -244,6 +278,21 @@ var instantiateTodo = function() {
 	});
 
 	refreshAudioButtons();
+
+	//https://github.com/stefanocudini/leaflet-search
+	var searchControl = L.control.search({
+		layer: group._featureGroup,
+		//propertyLoc: 'myData.text',
+		propertyName: 'title',
+		initial: false,
+		zoom: 9,
+		buildTip: function(text, val) {
+			var ici = val.layer.options.title;
+			console.log(d);
+			return '<div>'+ici+'</div>';
+		}
+	});
+	searchControl.addTo(map);
 
 }
 ////////////////////////////////////////////
@@ -297,7 +346,7 @@ var buildMap = function() {
         center: [28.671,-17.855],
         zoom: 9,
         minZoom: 8,
-        maxZoom: 13,
+        maxZoom: 17,
         locateButton: true,
         layers: [CartoDB_PositronNoLabels],
         maxBounds: maxbounds
@@ -305,10 +354,10 @@ var buildMap = function() {
 	var tileLayers = {
 		// "Stadia_AlidadeSmooth": Stadia_AlidadeSmooth,
 		// "Stadia_AlidadeSmoothDark": Stadia_AlidadeSmoothDark,
-		// "OpenTopoMap": OpenTopoMap,
-		// "Thunderforest_Outdoors": Thunderforest_Outdoors,
+		"caminar (OpenTopo)": OpenTopoMap,
+		"caminar (ThunderF)": Thunderforest_Outdoors,
 		// "Thunderforest_Pioneer": Thunderforest_Pioneer,
-		// "CyclOSM": CyclOSM,
+		"caminar (CyclOSM)": CyclOSM,
 		// "CartoDB_Positron": CartoDB_Positron,
 		"papel": CartoDB_PositronNoLabels,
 		"photo": Esri_WorldImagery,
@@ -318,7 +367,7 @@ var buildMap = function() {
 
 	map.on('click', function(e) {
 		var gps = e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4);
-		console.log("230223,1,"+gps+",,");
+		console.log(""+gps);
 		// close all popups
 		$(".opened").removeClass("opened");
 	});
@@ -350,10 +399,37 @@ window.addEventListener('load', function() {
 	
 	//$(".about").hide();
 
+	// $.ajax({
+	// 	crossDomain: true,
+	// 	type: 'POST',
+	// 	url: 'https://eu-central-1.aws.data.mongodb-api.com/app/data-fzstk/endpoint/data/v1/action/find',
+	// 	dataType: 'application/json',
+	// 	contentType: 'application/json',
+	// 	headers: {
+	// 		'Content-Type': 'application/json',
+	// 		'Access-Control-Request-Headers': '*',
+	// 		'Access-Control-Allow-Origin': '*',
+	// 		'api-key': 'EFGR1kttMZR54Zn26nzbFUxkj3BKGw2fQeNbhGrX4Fuo0sLt2qcL4iq0GwpwR0ky'
+	// 	},
+	// 	data: {
+	// 		"dataSource": "ClusterMong",
+	// 		"database": "db_alma",
+	// 		"collection": "radio",
+	// 		"filter": {
+	// 			//"status": "1",
+	// 		},
+	// 		//"sort": { "made": 'fromheart' },
+	// 		"limit": 40
+	// 	},
+	// 	success: function(r) {
+	// 		console.log('done:',r);	
+	// 	}
+	// });
+
 	$.ajax({
 		url: urlfetchcsv,
 		async: false,
-		success: function (csvd) {
+		success: function(csvd) {
 			data = $.csv.toObjects(csvd);
 		},
 		dataType: "text",

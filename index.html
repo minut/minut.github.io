@@ -1,10 +1,31 @@
+<!DOCTYPE HTML>
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>✂ radio alma</title>
+
+	<link rel="alternate" hreflang="es" href="http://almapalma.es"/>
+	<link rel="shortcut icon" href="images/favicon.ico">
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-	<meta property="og:url" content="http://minut.github.io/radio"/>
-    <meta name="description" content="nube ☊ audiofonica ♯ compartida"/>
+
+	<meta name="description" content="nube ♫ radiofónica ♬ compartida"/>
+	<meta name="author" content="✎"/>
+	<meta name="description" content="✂ radio alma ♪ la palma"/>
+	<meta name="keywords" content="radio, alma, la palma, isla de la palma"/>
+	<!-- Opengraph -->
+	<meta property="og:image" content="http://almapalma.es/images/radio_alma.jpg"/>
+	<meta property="og:title" content="✂ radio alma ♪ la palma"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:description" content="nube ♫ radiofónica ♬ compartida"/>
+	<meta property="og:url" content="http://almapalma.es"/>
+	<meta property="og:locale" content="es_ES"/>
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="✂ radio alma ♪ la palma">
+	<meta name="DC.description" content="nube ♫ radiofónica ♬ compartida">
+	<meta name="DC.creator" content="✎">
+	<meta name="DC.publisher" content="✎">
 
 	<!-- CSS Reset -->
 <!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"> -->
@@ -22,6 +43,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/green-audio-player.min.css">
 	<link rel="stylesheet" type="text/css" href="css/leaflet.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/leaflet-search.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/hint.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="src/playlist.css"></link>
 
@@ -34,6 +56,7 @@
 	<script src="libs/green-audio-player.min.js"></script>
 	<script src="libs/leaflet.js"></script>
     <script src="libs/leaflet.inflatable-markers-group.js"></script>
+    <script src="libs/leaflet-search.min.js"></script>
 
 	<script src="src/playlist.js"></script>
 	
@@ -43,7 +66,7 @@
 
 <div class="container">
 
-	<div class="about">
+	<div class="about hide">
 		<div class="icons">
 			<i class="fa fa-fw fa-microchip"></i><br>
 			<i class="fa fa-fw fa-map-o"></i><br>
@@ -102,7 +125,7 @@
 			</div>
 		</div>
 		<div class="moto hide">♪ La Palma ♯ infinitas posibilidades ♫</div>
-		<div class="actions hide">
+		<div class="actions">
 			<div id="toggleinput">
 				<div class="tbut"></div>
 				<i class="fa fa-plus"></i>
@@ -124,5 +147,5 @@
 	<div id="map"></div>
 
 </div>
-
 </body>
+</html>

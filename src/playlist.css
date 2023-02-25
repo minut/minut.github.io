@@ -247,7 +247,7 @@ input#addnew {
   height: 30px;
 }
 .leaflet-retina .leaflet-control-layers-toggle {
-  background-image: url(../css/images/layers.png);
+  background-image: url(../images/layers.png);
   background-size: 18px 18px;
 }
 #map {
@@ -311,6 +311,7 @@ input#addnew {
 .pt div {
 	border-radius: 6px;
 	min-width: 40px;
+	/*word-break: break-all;*/
 }
 /* ===================================== */
 .player {
