@@ -204,7 +204,7 @@ var instantiateTodo = function() {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
 			var ang = ((ic++)%50)*360;
-			var rad = 0.4+0.2*Math.random();
+			var rad = 0.3+0.2*Math.random();
 			d.lat = 28.7+rad*Math.cos(ang);
 			d.lng = -18+rad*Math.sin(ang);
 		} else {
@@ -212,16 +212,16 @@ var instantiateTodo = function() {
 			d.lng = +d.lng;
 		}
 		const marker = L.marker([d.lat,d.lng], {
+			title: "super "+d.text,
+			myData: d,
 			icon: L.divIcon({
 				html: buildMarkerHtml(d),
 				iconSize:[40,40], // this value is necessary for this plugin
 				iconAnchor:[0,0],
 				className: buildMarkerClass(d,"inflated"),
-				title: d.text
-			})
+			}),
 		});
-		//console.log(marker);
-        marker.options.myData = d; // hijack the L.Layer object to pass data
+        //console.log(marker);
         //marker.feature = {'title':d.text};
         localMarkers.push(marker);
 		group.addLayer(marker);
@@ -281,18 +281,20 @@ var instantiateTodo = function() {
 
 	//https://github.com/stefanocudini/leaflet-search
 	var searchControl = L.control.search({
-		layer: group._featureGroup,
-		//propertyLoc: 'myData.text',
+		layer: group,
+		//propertyLoc: 'options.myData',
 		propertyName: 'title',
-		initial: false,
+		//initial: false,
 		zoom: 9,
 		buildTip: function(text, val) {
-			var ici = val.layer.options.title;
-			console.log(d);
+			console.log(text);
+			console.log(val);
+			//var ici = val.layer.options.title;
+			
 			return '<div>'+ici+'</div>';
 		}
 	});
-	searchControl.addTo(map);
+	//searchControl.addTo(map);
 
 }
 ////////////////////////////////////////////
@@ -386,7 +388,7 @@ window.addEventListener('load', function() {
 	});
 	$(".cc").on('click', function(e) {
 		puertacount++;
-		if(puertacount>0)
+		if(puertacount>7)
 			puerta = true;
 	});
 	$(".about").on('click', function(e) {
