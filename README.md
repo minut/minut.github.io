@@ -12,6 +12,6 @@
 - construir una identidad común en herencia
 - facilitar la expresión del néctar de la co-creación
 - medio participativo y libertad de expresíon
-- forum de debate y comunicación no violenta
+- forum de debate y comunicación pacifica
 
 para participar, contáctanos [aquí](mailto:alma.palma.radio@gmail.com)
