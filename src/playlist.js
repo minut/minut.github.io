@@ -3,7 +3,7 @@
 //var urlfetchcsv = "https://lite.framacalc.org/_/f5mtflxh78-9zbr/csv";
 var urlfetchcsv = "src/points.csv";
 var urlpostline = "https://ethercalc.net/_/points";
-//var urlpostline = "https://lite.framacalc.org/_/f5mtflxh78-9zbr";
+//var urlpostline = "https://lite.framacalc.org/_/alma-9zin";
 
 var gPlayer = null ;
 var map = null;
