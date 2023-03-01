@@ -246,7 +246,7 @@ var instantiateTodo = function() {
 	// stats for tag bar
 	$('.tag').each(function(e) {
 		var t = $(this).attr("tag");
-		$(this).append($('<span class="stat">'+tagskeys[t][3]+'</span>'));
+		$(this).append($('<span class="stat hide">'+tagskeys[t][3]+'</span>'));
 	})
 
 	/////////////////////// EVENTs
@@ -296,6 +296,7 @@ var instantiateTodo = function() {
 	});
 	//searchControl.addTo(map);
 
+	console.log("BRAVO ! TODO EN CALMA.")
 }
 ////////////////////////////////////////////
 var buildMap = function() {
