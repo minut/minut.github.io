@@ -1,53 +1,58 @@
-lat,lng,tags,text,dur,file,date
-28.71,-17.88,MT,carr_ep1 preview,10min,e_c1
-28.715,-17.88,MT,carr_ep2 preview,9min,e_c2
-28.72,-17.88,MT,carr_ep3 preview,10min,e_c3
-28.725,-17.88,MT,carr_ep4 preview,9min,e_c4
-28.73,-17.88,MT,carr_ep5 preview,8min,e_c5
-28.735,-17.88,MT,carr_ep6 preview,10min,e_c6
-28.74,-17.88,MT,carr_ep7 preview,9min,e_c7
-28.745,-17.88,MT,carr_ep8 preview,10min,e_c8
-28.7975,-17.9535,B,mantas o tejidos fuertes min 1m50 puedo pagar :) @kungun
-28.4,-17.86,TA,aqui somos territorio muy peculiar — no hagamos por favor este destrozo que ocurre en otras islas
-28.6918,-17.9280,F,ofresco tablas de pino 2mx30cm un poco usadas
-28.7986,-17.9499,E,mercadillo 4a edición en la sonrisa - 230304 - calle lomitos
-28.8093,-17.9134,C,sabores de garafia - tienda ecologica verduras locales productos artesanales gente simpatica - lunes-miercoles sabado-domingo
-28.8081,-17.9133,E,domingo 11h-14h - pan verduras meriendas - en Sabores de Garafia
-28.8004,-17.9512,I,kungun finca les ofrece 11 physalis por visita - intercambiamos semillas y trucos ecológicos
-28.6322,-17.9303,IS,lonja - espacio de intercambios ropa cosas
-28.8038,-17.9319,M,cada martes - llano negro > puntagorda 9am vuelta a 4pm
-28.8061,-17.9653,M,podriase hacer una parada de guagua en esta recta que hay espacio ? seria agradecido por 5 vecinos viviendo cerca
-28.8058,-17.9242,C,udaco es el lugar de encontrar todo lo que se hace falta
-28.8298,-17.9460,C,tienda de marisa - ferreteria del alma
-28.7792,-17.9735,O,tipico canario - baila mi alma,1min,mus-antiguacanaria
-28.7804,-17.9727,O,esperando la orchestra escenrario activo,1min,mus-esperandolaorchestra
-28.7780,-17.9736,O,agradable eso de esperar a las almendras puntagordeñas,1min,mus-canarianplaylist
-,,O,canta pajarito ! aunque no estes a mi lado,2min,mus-petercantapajarito
-28.6494,-17.9478,O,machos alpha en tazacorte - puesta de sol - ellos tambien tienen corazon,1min,mus-guitaratazacorte
-,,O,te amo porque llevas sonrisa a cada de nuestros encuentros !,44s,mus-leoukulele
-28.7836,-17.9295,SB,quienes dueñ@s son de estos almendreros ? necesitan poda ya
-28.8054,-17.9333,S,fuente de la negra - como cuidarla ?
-,,A,tagasaste - fuente potente de nitrogeno
-,,A,salva de pino brillante que cuidad cura gargantas y dolores cosmicas
-28.7845,-17.9578,T,cuanto es que cuesta ya este proyecto de carretera tricias-negro ?
-28.8064,-17.9235,TB,taller de poda para frutales ? alguien para focalisar ?
-28.7980,-17.9500,EO,miercoles dada cada 4pm - circulo tambores — en la sonrisa - participacion libre
-28.7992,-17.9523,F,kungun le regala un equipo de sonido 220V radio CD aux
-28.7979,-17.9529,F,aguacates maduros ya para picar en el samuro negro del parking
-28.7440,-17.9432,TB,cerrado desde siempre el refugio de Tinizara ? ayuntamiento tiene llave ?
-,,B,lugar donde cosechar oregano ? compartimos !
-,,BM,bicicleta entera o pieças para montar un taller de reparación, precio bajo
-,,A,animales en el aire,1min,amb-birds
-,,O,caminar es lo mejor sin duda,1min,amb-caminarsimple
-,,A,gato mio se me acerca cada mañana,15s,amb-gato
-,,T,authentic expression of ourselves,29s,evel-authentic
-,,T,share to millions,1min,evel-sharetomillions
-,,T,microphone perspective - speaking channel,17s,evel-speakchannel
-28.8062,-17.9128,I,ubuntu - yo soy porque tu eres - encontrarnos,1min,guasi-ubuntu
-28.8072,-17.9208,A,abrir y ver el bosque,33s,manu-verelbosque
-,,O,dale tus manos bang bang,30s,mus-batucada
-,,O,sharing caring - a potential to wake up in the present biosphere - the new code,7min,newcode-sharingcaring
-,,O,camera claro un video,25s,ninos-avale
-,,O,encontrar un lugar y recursos basicos,21s,pom-lugarnormal
-,,M,subir y bajar - mucha gente esta,33s,pom-subibaja
-,,M,deporte de cada dia - la palma es gente de montaña,5min,pomiki-genteisla
+"lat","lng","tags","text","dur","file","date"
+"28.71","-17.88","MT","carr_ep1 preview","10min","e_c1",""
+"28.715","-17.88","MT","carr_ep2 preview","9min","e_c2",""
+"28.72","-17.88","MT","carr_ep3 preview","10min","e_c3",""
+"28.725","-17.88","MT","carr_ep4 preview","9min","e_c4",""
+"28.73","-17.88","MT","carr_ep5 preview","8min","e_c5",""
+"28.735","-17.88","MT","carr_ep6 preview","10min","e_c6",""
+"28.74","-17.88","MT","carr_ep7 preview","9min","e_c7",""
+"28.745","-17.88","MT","carr_ep8 preview","10min","e_c8",""
+"28.7986","-17.9499","E","mercadillo festivo y culinario en la sonrisa - 230303 - calle lomitos","","",""
+"28.8081","-17.9133","E","domingo 11h-14h - pan verduras meriendas - en Sabores de Garafia","","",""
+"28.8004","-17.9512","I","kungun finca les ofrece 11 physalis por visita - intercambiamos semillas y trucos ecológicos","","",""
+"28.6322","-17.9303","IS","lonja - espacio de intercambios ropa cosas","","",""
+"28.8038","-17.9319","M","cada martes - llano negro > puntagorda 9am vuelta a 4pm","","",""
+"28.8061","-17.9653","M","podriase hacer una parada de guagua en esta recta que hay espacio ? seria agradecido por 5 vecinos viviendo cerca","","",""
+"28.8093","-17.9134","C","sabores de garafia - tienda ecologica verduras locales productos artesanales gente simpatica - lunes-miercoles sabado-domingo","","",""
+"28.8058","-17.9242","C","udaco es el lugar de encontrar todo lo que se hace falta","","",""
+"28.8298","-17.946","C","tienda de marisa - ferreteria del alma","","",""
+"28.7845","-17.8281","OA","caminar - lo natual es caminar","1min40","amb-cuicuicaminar",""
+"28.7933","-17.9516","O","le agradezco a mi vecino porque llama a toda voz pa compartir buen sopa","1min","mus-tamborvecino",""
+"28.7664","-17.9791","O","orchestra prepara ceremonio de san Mauro en Puntagorda frente a la iglesia","1min30","mus-orchestrasanmauro1",""
+"28.7127","-17.9537","O","tijarafe - baila mi alma","1min","mus-antiguacanaria",""
+"28.7804","-17.9727","O","esperando la orchestra escenrario activo","1min","mus-esperandolaorchestra",""
+"28.778","-17.9736","O","agradable eso de esperar a las almendras puntagordeñas","1min","mus-canarianplaylist",""
+"28.6494","-17.9478","O","machos alpha en tazacorte - puesta de sol - ellos tambien tienen corazon","1min","mus-guitaratazacorte",""
+"","","O","canta pajarito ! aunque no estes a mi lado","2min","mus-petercantapajarito",""
+"","","O","llevas sonrisa a cada de nuestros encuentros !","44s","mus-leoukulele",""
+"","","O","dale tus manos bang bang","30s","mus-batucada",""
+"","","O","sharing caring - a potential to wake up in the present biosphere - the new code","7min","newcode-sharingcaring",""
+"","","O","camera claro un video","25s","ninos-avale",""
+"","","O","encontrar un lugar y recursos basicos","21s","pom-lugarnormal",""
+"","","A","tagasaste - fuente potente de nitrogeno","","",""
+"","","A","salva de pino brillante que cuidad cura gargantas y dolores cosmicas","","",""
+"","","B","lugar donde cosechar oregano ? compartimos !","","",""
+"","","BM","bicicleta entera o pieças para montar un taller de reparación - precio bajo porfa","","",""
+"28.6918","-17.928","F","ofresco tablas de pino 2mx30cm un poco usadas","","",""
+"28.7975","-17.9535","B","mantas o tejidos fuertes min 1m50 puedo pagar :) @kungun","","",""
+"28.7836","-17.9295","SB","quienes dueñ@s son de estos almendreros ? necesitan poda ya","","",""
+"28.8054","-17.9333","S","fuente de la negra - como cuidarla ?","","",""
+"28.7845","-17.9578","T","cuanto es que cuesta ya este proyecto de carretera tricias-negro ?","","",""
+"28.8064","-17.9235","TB","taller de poda para frutales ? alguien para focalisar ?","","",""
+"28.7951","-17.9493","EO","miercoles dada cada 4pm - circulo tambores — en la sonrisa - participacion libre","","",""
+"28.7992","-17.9523","F","kungun le regala un equipo de sonido 220V radio CD aux","","",""
+"28.7979","-17.9529","F","aguacates maduros ya para picar en el samuro negro del parking","","",""
+"28.744","-17.9432","TB","cerrado desde siempre el refugio de Tinizara ? ayuntamiento tiene llave ?","","",""
+"28.792","-17.9088","A","avena o grano ?","20s","guasro-avenagrana",""
+"28.8072","-17.9208","A","abrir y ver el bosque","33s","manu-verelbosque",""
+"28.8062","-17.9128","I","ubuntu - yo soy porque tu eres - encontrarnos","1min","guasi-ubuntu",""
+"","","O","caminar es lo mejor sin duda","1min","amb-caminarsimple",""
+"","","A","animales en el aire","1min","amb-birds",""
+"","","A","gato mio se me acerca cada mañana","15s","amb-gato",""
+"28.4","-17.86","TA","aqui somos territorio muy peculiar — no hagamos por favor este destrozo que ocurre en otras islas","","",""
+"","","TO","overcome crisis","50s","lou-womenmen",""
+"","","T","authentic expression of ourselves","29s","evel-authentic",""
+"","","T","share to millions","1min","evel-sharetomillions",""
+"","","T","microphone perspective - speaking channel","17s","evel-speakchannel",""
+"","","M","subir y bajar - mucha gente esta","33s","pom-subibaja",""
+"","","M","deporte de cada dia - la palma es gente de montaña","5min","pomiki-genteisla",""
