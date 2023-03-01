@@ -368,7 +368,7 @@ var buildMap = function() {
 	layerControl.addTo(map);
 
 	map.on('click', function(e) {
-		var gps = e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4);
+		var gps = e.latlng.lat.toFixed(4)+','+e.latlng.lng.toFixed(4);
 		console.log(""+gps);
 		// close all popups
 		$(".opened").removeClass("opened");
