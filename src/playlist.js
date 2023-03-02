@@ -46,6 +46,8 @@ var buildMarkerHtml = function(d) {
 	var spl = d.text.split(" ");
 	var txtshort = spl.slice(0,1).join(" ");
 	var txtlong = spl.slice(1).join(" ");
+	var exp = /(\b(https?):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    txtlong = txtlong.replace(exp,"<a target='_blank' href='$1'>$1</a>"); 
 	// O simple icon
 	var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
 	// O button icon for audio play
