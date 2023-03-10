@@ -32,15 +32,17 @@ var tagskeys = {
 var buildMarkerClass = function(d,more) {
 	var classtags = "tagged-"+d.tags.split("").join(" tagged-");
 	return classtags+' pt '+more;
-}
+};
+var getTagIcon = function(d) {
+	var icfa = "dot-circle-o"; // default if tag not recognized
+	if(tagskeys.hasOwnProperty(d.tags[0]))
+		icfa = tagskeys[d.tags[0]][1].split(".")[0];
+	return icfa;
+};
 var buildMarkerHtml = function(d) {
 	var icfa = "dot-circle-o"; // default if tag not recognized
 	if(tagskeys.hasOwnProperty(d.tags[0])) {
 		icfa = tagskeys[d.tags[0]][1].split(".")[0];
-		//var nsvg = 77 + i%15;
-		//nsvg = tagskeys[d.tags[0]][2];
-		//svg = "svg/p"+nsvg+".svg"; // "background-image:url("+svg+");
-		// keep total for each tag
 		tagskeys[d.tags[0]][3]++;
 	}
 	var spl = d.text.split(" ");
@@ -50,20 +52,23 @@ var buildMarkerHtml = function(d) {
     txtlong = txtlong.replace(exp,"<a target='_blank' href='$1'>$1</a>"); 
 	// O simple icon
 	var ihtml = '<i class="fa fa-'+icfa+'"></i> ';
+	var arrow = '<div class="tri"></div>';
+
+	txtshort = ' <span class="tit">'+txtshort+'</span>';
+	txtlong = ' <span class="more">'+txtlong+'</span>';
 	// O button icon for audio play
 	if(d.file) {
 		ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'</span> ';
 	}
-
-	return '<div>'+ihtml+txtshort+' <span class="more">'+txtlong+'</span></div>';
+	return '<div>'+arrow+ihtml+txtshort+txtlong+'</div>';
 };
 ////////////////////////////////////////////
 const group = L.inflatableMarkersGroup({
 	iconCreateFunction: function (icon) {
 		return L.divIcon({
 			html: buildMarkerHtml(icon.baseMarker.options.myData),
-			iconSize: [20,20],
-			iconAnchor:[0,0],
+			iconSize:[30,30], // this value is necessary for this plugin
+			iconAnchor:[-1,19],
 			className: buildMarkerClass(icon.baseMarker.options.myData,"deflated")
 		});
 	}
@@ -192,6 +197,8 @@ var instantiateTodo = function() {
 	
 	buildMap();
 
+	var myLayerGroup = new L.LayerGroup();
+
 	// MAKE TAGS BAR
 	$.map(tagskeys, function(v,k){
 		var ic = v[1].split(".")[0];
@@ -214,19 +221,26 @@ var instantiateTodo = function() {
 			d.lng = +d.lng;
 		}
 		const marker = L.marker([d.lat,d.lng], {
-			title: "super "+d.text,
+			//title: d.text,
 			myData: d,
 			icon: L.divIcon({
 				html: buildMarkerHtml(d),
-				iconSize:[40,40], // this value is necessary for this plugin
-				iconAnchor:[0,0],
+				iconSize:[130,30], // this value is necessary for this plugin
+				iconAnchor:[-1,19],
 				className: buildMarkerClass(d,"inflated"),
 			}),
 		});
+		const smarker = L.marker([d.lat,d.lng], {
+			title: d.text,
+			tagicon: getTagIcon(d),
+			icon: L.divIcon({className: "hide"})
+		});
         //console.log(marker);
         //marker.feature = {'title':d.text};
+        myLayerGroup.addLayer(smarker);
         localMarkers.push(marker);
 		group.addLayer(marker);
+
 		marker.on("click", function(e){
 			var cluster = $(e.sourceTarget._icon).hasClass("deflated");
 			if(cluster) // we zoom in
@@ -234,10 +248,12 @@ var instantiateTodo = function() {
 			else // we toggle open
 				$(e.sourceTarget._icon).toggleClass("opened");
 		});
+
+
 	});
 
+	//myLayerGroup.addTo(map);
 	group.addTo(map);
-	
 
 	//$(".name").fitText();
 
@@ -283,20 +299,30 @@ var instantiateTodo = function() {
 
 	//https://github.com/stefanocudini/leaflet-search
 	var searchControl = L.control.search({
-		layer: group,
-		//propertyLoc: 'options.myData',
+		layer: myLayerGroup,
 		propertyName: 'title',
-		//initial: false,
-		zoom: 9,
+		initial: false, // search not only start of strings
+		zoom: 16,
+		textPlaceholder: "busca...",
+		autoResize: false,
+		hideMarkerOnCollapse: true,
 		buildTip: function(text, val) {
-			console.log(text);
-			console.log(val);
-			//var ici = val.layer.options.title;
-			
-			return '<div>'+ici+'</div>';
+			var ic = '<i class="fa fa-fw fa-'+val.layer.options.tagicon+'"></i> '
+			return '<div>'+ic+val.layer.options.title+'</div>';
+		},
+		marker: { // custom L.Marker or false for hide
+			icon: false, // custom L.Icon for maker location or false for hide
+			animate: false, // animate a circle over location found
+			circle: { // draw a circle in location found
+				radius: 10,
+				weight: 2,
+				color: '#e03',
+				stroke: true,
+				fill: true
+			}
 		}
 	});
-	//searchControl.addTo(map);
+	searchControl.addTo(map);
 
 	console.log("BRAVO ! TODO EN CALMA.")
 }
@@ -345,7 +371,7 @@ var buildMap = function() {
 	corner2 = L.latLng(29.671,-16.855),
 	maxbounds = L.latLngBounds(corner1, corner2);
 	map = L.map('map',{
-		zoomControl: true,
+		zoomControl: false, // we add manually
         scrollWheelZoom: true,
         doubleClickZoom: false,
         center: [28.671,-17.855],
@@ -367,7 +393,10 @@ var buildMap = function() {
 		"papel": CartoDB_PositronNoLabels,
 		"photo": Esri_WorldImagery,
 	};
-	var layerControl = L.control.layers(tileLayers, null, {position: 'topleft'});
+	
+	L.control.zoom({position: 'topright'}).addTo(map);
+	
+	var layerControl = L.control.layers(tileLayers, null, {position: 'topright'});
 	layerControl.addTo(map);
 
 	map.on('click', function(e) {
@@ -389,13 +418,14 @@ window.addEventListener('load', function() {
 	$.get("README.md", function(data) {
 		$(".about .introduction").html(marked.parse(data));
 	});
-	$(".cc").on('click', function(e) {
-		puertacount++;
-		if(puertacount>7)
-			puerta = true;
-	});
+	// $(".cc").on('click', function(e) {
+	// 	puertacount++;
+	// 	if(puertacount>7)
+	// 		puerta = true;
+	// });
 	$(".about").on('click', function(e) {
-		if(puerta) $(".about").hide();
+		//if(puerta) $(".about").hide();
+		$(".about").hide();
 	});
 	$(".toglabout").on('click', function(e) {
 		$(".about").show();
