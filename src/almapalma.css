@@ -50,10 +50,16 @@ html, body {
 	background-color: #fff;
 	z-index: 1000;
 	text-align: center;
-	font-size: 30px;
+	font-size: 24px;
 	color: #566574;
 	background: #fade9c;
 	cursor: pointer;
+}
+.toglabout i {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
 }
 .about {
 	font-family: 'Sawarabi Mincho', serif;
@@ -118,13 +124,8 @@ html, body {
 }
 /* ===================================== */
 .header {
-/*	position: absolute;
-	top: 0;
-	left: 0;*/
 	width: 100%;
 	text-align: center;
-	margin-bottom: 40px;
-	/*border-bottom: 7px solid lightgray;*/
 	z-index: 999;
 }
 /* ===================================== */
@@ -245,7 +246,7 @@ input#addnew {
 #map {
 	position: absolute;
 	margin: 0;
-	top: 50px;
+	top: 48px;
 	bottom: 50px;	
 	left: 0;
 	right: 0;
@@ -324,12 +325,23 @@ input#addnew {
 .leaflet-control-search .search-tooltip {
 	max-height: 470px;
 	max-width: 390px;
+	margin-top: 0px;
+	z-index: 800;
 }
 .leaflet-control-search .search-tip {
-  margin: 0px;
-  padding: 2px 5px;
-  border: none;
-  border-radius: none;
+	margin: 0px;
+	padding: 2px 5px;
+	border: none;
+	border-radius: 0px;
+}
+.leaflet-control-search .search-cancel {
+	right: 34px;
+}
+.leaflet-control-search .search-input {
+	margin: 4px;
+}
+.leaflet-control-search.search-exp input {
+	width: 220px;
 }
 /* ===================================== */
 .player {
