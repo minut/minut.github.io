@@ -1,0 +1,341 @@
+/* ===================================== */
+:root {
+  --lverde: #729c16;
+  --lblack: #6c6c6c;
+  --lwhite: #f8f6f8;
+  --dwhite: #eeebeb;
+  --pyellow: #fff2ad;
+  /*--currentcolor: gray;*/
+  /*--pattern-channel-1: lightgray;*/
+}
+/* ===================================== */
+/* hack to allow linebreaks, aka « &#10; » within hint.css tooltips */
+/* https://github.com/chinchang/hint.css/issues/100 */
+[class*=hint--]:after {
+  z-index: 9999999;
+  white-space: pre;
+  text-align: left;
+}
+/*[data-hint]:after {
+  text-align: left;
+}*/
+/* ===================================== */
+/* Larger than mobile screen */
+@media (min-width: 40.0rem) { ... }
+
+/* Larger than tablet screen */
+@media (min-width: 80.0rem) { ... }
+
+/* Larger than desktop screen */
+@media (min-width: 120.0rem) { ... }
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	background: var(--lwhite);
+}
+/* ===================================== */
+.hide {
+	display: none !important;
+}
+.toglabout {
+	position: absolute;
+	left: 17px;
+	bottom: 69px;
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	border: 2px solid rgba(0,0,0,.2);
+	background-color: #fff;
+	z-index: 1000;
+	text-align: center;
+	font-size: 30px;
+	color: #566574;
+	background: #fade9c;
+	cursor: pointer;
+}
+.about {
+	font-family: 'Sawarabi Mincho', serif;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0px 20px;
+	text-align: left;
+	background: #fade9c;
+	z-index: 9999999;
+	overflow-y: scroll;
+}
+.about .icons {
+	position: absolute;
+	left: 5px;
+	top: 15px;
+	font-size: 1.4em;
+}
+.about .icons i {
+	float: right;
+	padding: 3px;
+}
+.about .introduction {
+	margin-left: 30px;
+	line-height: 1.1em;
+}
+.about .introduction ul {
+	list-style-type: none;
+	padding: 0;
+}
+.about .introduction h2 {
+	text-align: center;
+	margin-top: 40px;
+}
+.about .introduction h3 {
+	margin-bottom: -9px;
+	font-style: italic;
+}
+.about .introduction h4 {
+	margin-bottom: -9px;
+	margin-top: 8px;
+	font-style: italic;
+	font-size: 0.7em;
+}
+.about .introduction blockquote {
+	margin: 0;
+	margin-left: -25px;
+	margin-right: -15px;
+	font-style: italic;
+	font-size: 0.9em;
+	color: #867f60;
+}
+.about .introduction a {
+	text-decoration: none;
+	color: #5788ac;
+}
+.about .introduction pre {
+	text-align: center;
+	font-weight: bold;
+}
+/* ===================================== */
+.header {
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
+	width: 100%;
+	text-align: center;
+	margin-bottom: 40px;
+	/*border-bottom: 7px solid lightgray;*/
+	z-index: 999;
+}
+/* ===================================== */
+.actions {
+	position: relative;
+	margin-top: 13px;
+	margin-bottom: 7px;
+}
+.searcher, .adder {
+	display: inline-block;
+	position: relative;
+}
+#toggleinput {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-140px,-50%);
+	border-radius: 15px;
+	border: 1px solid lightgray;
+	background: lightgrey;
+	width: 50px;
+	height: 25px;
+	overflow: hidden;
+}
+#toggleinput .tbut {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background: white;
+	top: 1px;
+	right: 1px;
+}
+#toggleinput i {
+	position: absolute;
+	font-size: 0.8em;
+	top: 50%;
+	transform: translate(0,-50%);
+	color: black;
+}
+#toggleinput.switched .tbut {
+	left: 0;
+}
+#toggleinput.switched i.fa-plus { color: darkred; }
+#toggleinput.switched i.fa-search { color: gray; }
+#toggleinput i.fa-plus { left: 8px; color: gray; }
+#toggleinput i.fa-search { right: 8px; color: var(--lverde);}
+input {
+	border-radius: 17px;
+	/*text-align: center;*/
+	padding: 6px 4px 2px 4px;
+	font-family: 'Tilt Neon', cursive;
+}
+input#search {
+	color: var(--lverde);
+	width: 160px;
+}
+input#addnew {
+	filter: drop-shadow(0 0 5px #9e3030);
+	color: darkred;
+	width: 160px;
+}
+#submitnew {
+	position: absolute;
+	top: 50%;
+	right: -36px;
+	transform: translate(-50%,-50%);
+	color: darkred;
+}
+#toggleinput, #submitnew {
+	cursor: pointer;
+}
+/* ===================================== */
+.tags {
+	margin-top: 10px;
+	font-size: 1.1em;
+}
+.tag {
+	padding: 5px;
+	margin: 1px;
+	border-radius: 12px;
+	color: lightgray;
+	/*filter: drop-shadow(0 0 2px #4d4d4d);*/
+	z-index: 99999;
+}
+.tag:hover {
+	cursor: pointer;
+}
+.tag .stat {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	font-size: 0.5em;
+	text-align: center;
+	transform: translate(-50%,0);
+}
+.tag.on {
+	background-color: var(--lverde);
+	color: white;
+	filter: none;
+}
+.tag.on i {
+
+}
+/* ===================================== */
+.leaflet-control-attribution {
+	font-size: 0.7em;
+	opacity: 0.3;
+	pointer-events: none;
+}
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px;
+  height: 30px;
+}
+.leaflet-retina .leaflet-control-layers-toggle {
+  background-image: url(../images/layers.png);
+  background-size: 18px 18px;
+}
+#map {
+	position: absolute;
+	margin: 0;
+	top: 50px;
+	bottom: 50px;	
+	left: 0;
+	right: 0;
+	border-top: 2px solid lightgray;
+}
+.pt {
+	font-family: 'Tilt Neon', cursive;
+	text-align: left;
+	font-size: 1.1em;
+	padding: 6px 10px;
+	border-radius: 17px;
+	/* we need to give an explicit size to the icons to find which icons
+	 conflict with each other but we actually want them to be auto-sized */
+	width: 150px !important;
+	height: auto !important;
+	background-color: #ffffffc7;
+}
+.pt div {
+	border-radius: 6px;
+	/*word-break: break-all;*/
+}
+.pt .tri {
+	width: 6px;
+	height: 6px;
+	border-radius: 8px;
+/*	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #9eb589;*/
+	background-color: #224917ba;
+	position: absolute;
+	left: -8px;
+	top: 12px;
+	border: 4px solid #fafcfa;
+}
+.pt.onair {
+	background: #e09d99de !important;
+}
+.pt.onair i {
+	animation: fa-spin 4s infinite linear;
+	opacity: 1;
+	color: darkred;
+}
+.pt button {
+	cursor: pointer;
+	padding: 4px 2px 4px 6px;
+	border-radius: 20px;
+	font-size: 0.8em;
+}
+.pt span.dur {
+	font-size: 0.7em;
+	font-style: italic;
+	color: grey;
+	margin-right: 5px;
+}
+.pt i {
+	margin-right: 4px;
+}
+.pt span.more {
+	display: none;
+}
+.pt.opened span.more {
+	display: inline;
+}
+.pt.inflated.opened {
+	background: #c4daafe6;
+	z-index: 999999 !important;
+}
+.pt.deflated {
+	opacity: 0.6;
+	background: none;
+}
+.pt.deflated .tit, .pt.deflated .more, .pt.deflated .dur {
+	display: none;
+}
+/* ===================================== */
+.leaflet-control-search .search-tooltip {
+	max-height: 470px;
+	max-width: 390px;
+}
+.leaflet-control-search .search-tip {
+  margin: 0px;
+  padding: 2px 5px;
+  border: none;
+  border-radius: none;
+}
+/* ===================================== */
+.player {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top: 7px solid lightgray;
+}
+/* ===================================== */
