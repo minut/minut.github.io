@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /src/
-Disallow: /svg/
 Disallow: /files/
+Disallow: /images/
+Disallow: /papelito/
