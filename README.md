@@ -168,7 +168,8 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - pero nada impide, que un poco despues
 - nos desenchufémos los pies 
 - volver al paisaje simple natural
-- del yo colectivo que dibujamos
+- respiro fundo y
+- paz alegre
 
 ## ⁋ menudas preguntas
 ### eso nos añade mas tiempo de pantalla !
