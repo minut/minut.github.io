@@ -1,11 +1,11 @@
 
 ## alma ❀ palma
-- *alma⠂palma* ⠢ es barca en el medio del mar
-- *alma⠂palma* ⠮ mira local canta global
-- *alma⠂palma* ⠪ permite todo
-- *alma⠂palma* ⠅ es libre ♪
-- *alma⠂palma* ⠞ junta la teoria a la pratica
-- *alma⠂palma* ⠫ es el alma de la palma
+- *alma·palma* ⠢ es barca en el medio del mar
+- *alma·palma* ⠮ mira local canta global
+- *alma·palma* ⠪ permite todo
+- *alma·palma* ⠅ es libre ♪
+- *alma·palma* ⠞ junta la teoria a la pratica
+- *alma·palma* ⠫ es el alma de la palma
 
 ## es un mapa
 para **conocer** ※ **compartir** tesoros ᯽ **tablón digital** ⌨ muestra viveza existente en la isla ⁂ **valora** tu alrededor ₪ promueve lo **local** ⅋ **desea** la unión facilita la **expresión** ᠅ **construye** una identidad común en herencia ℘ **nube radiofónica** co-creativa ༅ **mosaico** literario **cosmopolito** ᰿ enciende motivación individual ࿊ **chispas** colectivas ᢁ **da luz** a las cualidades ३ **somos y experimentamos**
@@ -13,13 +13,14 @@ para **conocer** ※ **compartir** tesoros ᯽ **tablón digital** ⌨ muestra v
 ## ✎ participar
 quieres valorar en la isla algún
 
-	proyecto ᠅ finca ᠅ evento ᠅ grupo ᠅ lugar
+	proyecto ᠅ finca ᠅ evento
+	grupo ᠅ lugar ᠅ tesoro
 
 anunciar algo, preguntar ?
 juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), donde debatimos, afinamos ideas y contenidos que aparecen en el mapa
 
 ## ☲ categorias
-- propuesta estructural para filtrar contenidos
+- 10 grandes temas para filtrar contenidos
 - empieza tu mensaje con majusculas usando lo siguiente
 
 ### Ⓔ eventos
@@ -77,9 +78,9 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 > - ↂ este proyecto es la ostia ! aqui algo parecido desde el Hierro
 
 ### Ⓞ ofresco
-> - ० quieres practicar español o aleman en grupos de 3-7, contacta 402X62X76, el castillo
-> - ० presto herramientas de huerta, motocultor, desbrosadora, precio consciente
-> - ० ayuda para mover cosas, limpiar ? yo dispuesto 10euro/h
+> - ⨕ quieres practicar español o aleman en grupos de 3-7, contacta 402X62X76, el castillo
+> - ⨕ presto herramientas de huerta, motocultor, desbrosadora, precio consciente
+> - ⨕ ayuda para mover cosas, limpiar ? yo dispuesto 10euro/h
 
 ### Ⓑ busco
 > - Ᏸ preciso terreno para cultivar papas, zona norte
