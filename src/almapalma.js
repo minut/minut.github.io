@@ -218,9 +218,9 @@ var instantiateTodo = function() {
 		//console.log("adding:",d,i);
 		if(!d.lat) {
 			var ang = ((ic++)%50)*360;
-			var rad = 0.3+0.2*Math.random();
+			var rad = 0.18+0.3*Math.random();
 			d.lat = 28.7+rad*Math.cos(ang);
-			d.lng = -18+rad*Math.sin(ang);
+			d.lng = -17.90+rad*Math.sin(ang);
 		} else {
 			d.lat = +d.lat;
 			d.lng = +d.lng;

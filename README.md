@@ -1,6 +1,6 @@
 
 ## alma ❀ palma
-- *alma⠂palma* ⠢ es una barca en el medio del mar
+- *alma⠂palma* ⠢ es barca en el medio del mar
 - *alma⠂palma* ⠮ mira local canta global
 - *alma⠂palma* ⠪ permite todo
 - *alma⠂palma* ⠅ es libre
@@ -8,15 +8,7 @@
 - *alma⠂palma* ⠫ es el alma de la palma
 
 ## es un mapa
-- espacio para conocer y compartir tesoros
-- tablón digital que muestra la viveza existente en la isla
-- valora tu alrededor, promueve lo local
-- desea la unión, facilita la expresión
-- construye una identidad común en herencia
-- nube radiofónica co-creativa
-- mosaico literario cosmopolito
-- enciende motivación individual y chispas colectivas
-- da luz a las cualidades que somos y experimentamos
+espacio para **conocer** ※ **compartir** tesoros ᯽ **tablón digital** ⌨ muestra viveza existente en la isla ⁂ **valora** tu alrededor ₪ promueve lo **local** ⅋ **desea** la unión facilita la **expresión** ᢁ **construye** una identidad común en herencia ℘ **nube radiofónica** co-creativa ⁌ **mosaico** literario **cosmopolito** ᰿ enciende motivación individual ࿊ **chispas** colectivas ត da luz a las cualidades ३ **somos y experimentamos**
 
 ## ✎ participar
 quieres valorar en la isla algún
@@ -32,115 +24,119 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 
 ### Ⓔ eventos
 #### calendario
-> - todos domingos merienda, sabores de garafia, 11am a 2pm
-> - mercadillo festivo de la cumbre, 23-04-28, 3pm, concierto batucada
-> - curso de taichi cada miercoles de junio/julio, 10h a 12h, precio conciente
-> - reunion red de semillas garafia, 13mayo 15h a 18h, ven con tus macetas y semillas 
+> - ᮿ todos domingos merienda, sabores de garafia, 11am a 2pm
+> - ᮿ mercadillo festivo de la cumbre, 23-04-28, 3pm, concierto batucada
+> - ᮿ curso de taichi cada miercoles de junio/julio, 10h a 12h, precio conciente
+> - ᮿ reunion red de semillas garafia, 13mayo 15h a 18h, ven con tus macetas y semillas 
 
 ### Ⓘ fincas
 #### la gente
-> - tengo semillas de moringa para ofrecer, pasa visitar !
-> - soy Luka, ofresco trabajitos de diseño huerta, y construcion con barro
-> - busco plantones de nogal
-> - finca madricultura ofrece talleres imersivos de permacultura y anthroposofia
-> - busco alguien para cuidar finca julio>octubr, 603X859X9
+> - ᛄ tengo semillas de moringa para ofrecer, pasa visitar !
+> - ᛄ soy Luka, ofresco trabajitos de diseño huerta, y construcion con barro
+> - ᛄ busco plantones de nogal
+> - ᛄ finca madricultura ofrece talleres imersivos de permacultura y anthroposofia
+> - ᛄ busco alguien para cuidar finca julio>octubr, 603X859X9
 
 ### Ⓜ transportes
 #### compartir viajes
-> - salgo cada mañana las tricias > los llanos 8pm, 2euro
-> - busco viaje domingo27abril tijar>puntg ~ 9h-15h
-> - alguien puede llevar una bolsa de Mazo a Barlovento, esta semana ?
-> - ofresco 3plazas Tijarafe > Fuencaliente miercoles 2 en la mañana
+> - ฟ salgo cada mañana las tricias > los llanos 8pm, 2euro
+> - ฟ busco viaje domingo27abril tijar>puntg ~ 9h-15h
+> - ฟ alguien puede llevar una bolsa de Mazo a Barlovento, esta semana ?
+> - ฟ ofresco 3plazas Tijarafe > Fuencaliente miercoles 2 en la mañana
 
 ### Ⓢ cosas
 #### objetos herramientas
-> - aqui tengo 20 tablas de pino medio usadas para trueque
-> - busco 2 adaptores tubo plastico de 25(3/4) a 20(1/2)
-> - ofresco mantas y tejidos grandes, 703X8X41
-> - @ayunt.Puntallana: talleres mensual de informacion y valorizacion de los tesoros del punto limpio ?
+> - Ꭶ aqui tengo 20 tablas de pino medio usadas para trueque
+> - Ꭶ busco 2 adaptores tubo plastico de 25(3/4) a 20(1/2)
+> - Ꭶ ofresco mantas y tejidos grandes, 703X8X41
+> - Ꭶ @ayunt.Puntallana: talleres mensual de informacion y valorizacion de los tesoros del punto limpio ?
 
 ### Ⓒ comida
 #### frutas verduras
-> - tengo 5 naranjeros, me ayudas a cosecharlas ? llevaras muchas ! fines de semana
-> - cambio zamuros de mandarinas contra manzanas
-> - productos naturales, aceite essentiales, todo organico, contacta 603X4X23
-> - 10 bolitas platano-seco-almendra 3euro, gofio-lemon-miel 2euro
+> - ᕦ tengo 5 naranjeros, me ayudas a cosecharlas ? llevaras muchas ! fines de semana
+> - ᕦ cambio zamuros de mandarinas contra manzanas
+> - ᕦ productos naturales, aceite essentiales, todo organico, contacta 603X4X23
+> - ᕦ 10 bolitas platano-seco-almendra 3euro, gofio-lemon-miel 2euro
 
 ### Ⓝ naturaleza
 #### semillas plantas animales
-> - el tagazaste si que crece mas rapido que un aguacatero
-> - alguien me ayuda con el pasto de las cabras ? le ofresco queso
-> - este camino real necesita limpieza, invitamos cabras en esta zona ? full tedera gacia
+> - უ el tagazaste si que crece mas rapido que un aguacatero
+> - უ alguien me ayuda con el pasto de las cabras ? le ofresco queso
+> - უ este camino real necesita limpieza, invitamos cabras en esta zona ? full tedera gacia
 
 ### Ⓐ creacíon
 #### arte literatura música
-> - grabacion mobil del concierto de las rocas, 23-04-02, ver bandcamp para ayudar la banda
-> - el papelito, fanzine abierto de felicidad compartidan, archivos aqui
-> - pintamos juntås murales en puntagorda ! colectivo artistas pide a comercios renovacion de muros
+> - ᜋ grabacion mobil del concierto de las rocas, 23-04-02, ver bandcamp para ayudar la banda
+> - ᜋ el papelito, fanzine abierto de felicidad compartidan, archivos aqui
+> - ᜋ pintamos juntås murales en puntagorda ! colectivo artistas pide a comercios renovacion de muros
 
 ### Ⓓ debatir
 #### educacion ideas filosofia
-> - no será que esta carretera no precisaba ser construida otra vez ?
-> - que tal hagamos excursion vacacional en la caldera con niños 6-9 de edad ?
-> - este proyecto es la ostia ! aqui algo parecido desde el Hierro
+> - ↂ no será que esta carretera no precisaba ser construida otra vez ?
+> - ↂ que tal hagamos excursion vacacional en la caldera con niños 6-9 de edad ?
+> - ↂ este proyecto es la ostia ! aqui algo parecido desde el Hierro
 
 ### Ⓞ ofresco
-> - quieres practicar español o aleman en grupos de 3-7, contacta 402X62X76, el castillo
-> - presto herramientas de huerta, motocultor, desbrosadora, precio consciente
-> - ayuda para mover cosas, limpiar ? yo dispuesto 10euro/h
+> - ० quieres practicar español o aleman en grupos de 3-7, contacta 402X62X76, el castillo
+> - ० presto herramientas de huerta, motocultor, desbrosadora, precio consciente
+> - ० ayuda para mover cosas, limpiar ? yo dispuesto 10euro/h
 
 ### Ⓑ busco
-> - preciso terreno para cultivar papas, zona norte
-> - una guitara classica, precio<200euro
-> - alguien me puede cuidar el perro este verano junio>sept.
+> - Ᏸ preciso terreno para cultivar papas, zona norte
+> - Ᏸ una guitara classica, precio<200euro
+> - Ᏸ alguien me puede cuidar el perro este verano junio>sept.
 
 
 ## el como ⚛ del porque
 - ya que somos pocås aqui, puñada de humanås
-- conviviendo en esta fractal bonita
-- que todavia no logra del todo percibir a si misma
-- por estar dispersås en tantos asuntos
-- todos dias los caminos distintos
+- conviviendo en una fractal bonita
+- que todavia no logra percibir a si misma
+- estar dispersås en tantos asuntos
+- todos dias caminos distintos
 - del mudo a fuencaliente
-- enraizadås al benahuare o mariposas viajeras
+- al llano por la cumbre
+- enraizadås viajerås
+- mariposas de benahuare
 
 ᱓
 
 - anhelo de ser verdadera isla verde
-- no solo por discursos fachados o ilusiones polidictadas
-- cuando poderosos actores nos quieren modernizar
-- a golpes suaves de contratos escondidos
-- la banana del turismo de masa dejo su huella en otras islas
-- como el precio del agua la montaña cuesta por mafia
+- modernos discursos 
+- y mi atencion al presente se detiene
+- golpes suaves escondidos
+- la banana del turismo de masa
+- dejo huella en otras islas
+- el precio del agua
+- montaña cuesta y mafia
 
 ☣
 
 - esta tambien el diablo dentro de mi
-- ô crecimiento del uno-por-si-mismo
-- primo de la corrupcion y destrucción
-- camaras de seguranza grabadas a toda velocidad
-- el miedo al otro erige muros metalicos
+- ô crecimiento del uno-por-si
+- primo corrupto y normalista
+- replicado a toda velocidad
+- con muros al otro
+- metalicos y miedo
 
 ᱘
 
-- sigue el sueño de conquistar el mundo
-- con nuestros corazones
-- y abrimos cada mes mas
-- cadenas yuturbe grupos wazaps cuentas tagram twitstok
-- porque *alli esta la gente*
-- ofertas baratas de nuestros seres y discursos
-- a entitades globales capitalisticas
+- sigue mi sueño de conquistar el mundo !
+- y le abro cada mes mas
+- cadernas-yut ubi-grupos
+- wazapu-contas stagram-tiktom
+- porque *alli esta la gente* ?
+- un tiempo barato tu palabra
+- global capitalistica
 
 ☯
 
-- acabamos hundidos en flujos sin final
-- ya sin saber distinguir publicidad del ruido
-- enganchados a la mezcla del importante y del efímero
+- acabo hundidå en flujo sin final
+- sin saber ya discernir
+- publicidad del ruido
+- enganchadå a las mezclas
+- del importante y del efímero
 - al final del dia nada cambia
-- cerebro cansado dando vueltas
-- el orgullo tramposo de contener
-- un saber especial y la experiencia
-- este tesoro valoroso dentro mi mismo
+- mente cansada dando vueltas
 
 ᱶ
 
@@ -151,24 +147,24 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 ✎
 
 - desinstalla estas todas applicaciones
-- que solo sirven a chuparte datos y espacio cognitivo
+- que solo chupan espacio cognitivo
 - no precisamos mas apps
 - un bueno sitio web y ya esta
-- centrarse otra vez en lo que deseamos
-- cuidar lås niñås y sus ojos
+- mas tiempo suave en el entorno
+- mano activa picando tierra
 
 জ
 
-- deja que radio alma te alivia el dia-dia
+- deja la radio alma te aliviar el dia dia
 - con sus vozes frágiles y cuentos locales
-- recetas fantasticas al cambio verdadero
+- recetas fantasticas de pistas verdaderas
 
 လ
 
 - es digital, vale
 - pero nada impide, que un poco despues
 - nos desenchufémos los pies 
-- para volver al paisaje simple natural
+- volver al paisaje simple natural
 - del yo colectivo que dibujamos
 
 ## ⁋ menudas preguntas
@@ -179,10 +175,10 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - mientras los gafam te desean enganchadå
 - mas tiempo scroyando contenidos por ellos puestos
 - arriba-bajo con los ojos, pulgar tensado
-- nosotrås experimentamos lijera y eficiente meta
-- de pasar menos tiempo frente a pantalla
-- mejorar diseño de acesso a informaciones
-- volver ya rapido al suelo y descansar ojo
+- nosotrås experimentamos mas simple
+- pasar menos tiempo frente a pantalla
+- gracias al diseño asado
+- volver ya rapido al suelo y descansar el ojo
 
 ### ok, es solo un nuevo *twittermap* limitado a la palma
 - los gafam pisotean la calidad
@@ -195,9 +191,10 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - hacer juntås ! no todås de su lado
 - un esfuerzo de sintesis y comunicacion clara
 - del sentido de las palabras
-- que dure su valor en el tiempo !
+- pocas
 - almapalma es biblioteca cuidadosa
 - archivo abierto donde nosotrås somos Historia
+- que dure al tiempo
 
 ### es todo publico, no privacidad ?
 - cuando usas los gafam, no tienes accesso a tus datos
@@ -205,19 +202,21 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - cualquier clic, tiempo de espera, scroll, palabra
 - esta en venta en los mercados publicitarios mundiales
 - (y la publicidad en dictadura/guerra no es de vender ropa)
-- aqui montamos otro paradigmo
+- montamos otro paradigmo
 - codigo abierto, debate consensudado y transparente
 - facilitar acesso y entendimiento para todås
 
 ### eso no lo va a ver nadie, la gente esta en fasbok, wazap y tiktuk
-- la gente puede mover
+- la gente esta por todo lado
+- la gente mueve
+- la gente somos nosotrås
 - si no lo experimentamos
 - nadie lo hará a nuestro lugar
 
 ### si somos muchås, será confusion !
 - libertad de expresíon modulo
 - comunicación consciente, pacifica
-- podemos adaptar, resolver conflictos
+- observar, traducir, adaptar
 
 ### igual ni vemos nada en el mapa por tantos mensajes
 - ventaja del zoom !
@@ -227,8 +226,8 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - una espiral fractal en la que
 - tu altura ya define la escala
 - estan demás los filtros y la busqueda !
-- viendo los más recientes arriba
-- en la lista
+- viendo los más recientes
+- arriba en la lista
 
 ### que necesita almapalma ?
 gente buena para mantener la barca !
