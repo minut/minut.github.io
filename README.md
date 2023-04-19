@@ -121,7 +121,7 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - con muros al otro
 - metalicos y miedo
 
-᱘
+♆
 
 - sigue mi sueño de conquistar el mundo !
 - y le abro cada mes mas
@@ -141,7 +141,7 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - al final del dia nada cambia
 - mente cansada dando vueltas
 
-ᱶ
+᠀
 
 - entonces que ?
 - entonces ya !
@@ -156,7 +156,7 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - mas tiempo suave en el entorno
 - mano activa picando tierra
 
-জ
+✴
 
 - deja la radio alma te aliviar el dia dia
 - con sus vozes frágiles y cuentos locales
