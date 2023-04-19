@@ -122,6 +122,9 @@ html, body {
 	text-align: center;
 	font-weight: bold;
 }
+.about .introduction p {
+	text-align: center;
+}
 /* ===================================== */
 .header {
 	width: 100%;

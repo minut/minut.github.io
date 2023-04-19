@@ -3,12 +3,12 @@
 - *alma⠂palma* ⠢ es barca en el medio del mar
 - *alma⠂palma* ⠮ mira local canta global
 - *alma⠂palma* ⠪ permite todo
-- *alma⠂palma* ⠅ es libre
+- *alma⠂palma* ⠅ es libre ♪
 - *alma⠂palma* ⠞ junta la teoria a la pratica
 - *alma⠂palma* ⠫ es el alma de la palma
 
 ## es un mapa
-espacio para **conocer** ※ **compartir** tesoros ᯽ **tablón digital** ⌨ muestra viveza existente en la isla ⁂ **valora** tu alrededor ₪ promueve lo **local** ⅋ **desea** la unión facilita la **expresión** ᢁ **construye** una identidad común en herencia ℘ **nube radiofónica** co-creativa ⁌ **mosaico** literario **cosmopolito** ᰿ enciende motivación individual ࿊ **chispas** colectivas ត da luz a las cualidades ३ **somos y experimentamos**
+para **conocer** ※ **compartir** tesoros ᯽ **tablón digital** ⌨ muestra viveza existente en la isla ⁂ **valora** tu alrededor ₪ promueve lo **local** ⅋ **desea** la unión facilita la **expresión** ᠅ **construye** una identidad común en herencia ℘ **nube radiofónica** co-creativa ༅ **mosaico** literario **cosmopolito** ᰿ enciende motivación individual ࿊ **chispas** colectivas ᢁ **da luz** a las cualidades ३ **somos y experimentamos**
 
 ## ✎ participar
 quieres valorar en la isla algún
@@ -88,6 +88,8 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 
 
 ## el como ⚛ del porque
+᱓
+
 - ya que somos pocås aqui, puñada de humanås
 - conviviendo en una fractal bonita
 - que todavia no logra percibir a si misma
@@ -98,7 +100,7 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - enraizadås viajerås
 - mariposas de benahuare
 
-᱓
+๑
 
 - anhelo de ser verdadera isla verde
 - modernos discursos 
@@ -240,7 +242,9 @@ difundir este mensaje por la isla !
 - *crecerá !*
 
 ## alma ☮ guagua
-has leido todo eso ? recompensa, un mercadillo ambulante !
+has leido todo eso ?
+
+recompensa, un mercadillo ambulante !
 
 - el pendiente real de almapalma
 - es un vehiculo con almaçen
