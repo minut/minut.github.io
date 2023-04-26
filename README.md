@@ -1,4 +1,7 @@
 
+> *lastedit map.points 26april.3pm*
+
+
 ## alma ❀ palma
 - *alma·palma* ⠢ es barca en el medio del mar
 - *alma·palma* ⠮ mira local canta global
