@@ -39,28 +39,63 @@ html, body {
 .hide {
 	display: none !important;
 }
-.toglabout {
+#audioname {
 	position: absolute;
-	left: 17px;
-	bottom: 69px;
+	left: 115px;
+	bottom: 5px;
+	z-index: 2500;
+	font-size: 0.6em;
+	font-style: italic;
+	color: #a6a6a6;
+}
+.brut {
+	position: absolute;
 	width: 30px;
 	height: 30px;
 	border-radius: 20px;
 	border: 2px solid rgba(0,0,0,.2);
 	background-color: #fff;
-	z-index: 1000;
 	text-align: center;
 	font-size: 24px;
 	color: #566574;
-	background: #fade9c;
 	cursor: pointer;
+	z-index: 3000;
 }
-.toglabout i {
+.bradio {
+	background: #e9e9ed;
+}
+.brut i {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
 }
+.bradio i {
+	font-size: 0.55em;
+	color: #888;
+}
+.bradio.vivo {
+	background: #e09d99de;
+	z-index: 3100;
+}
+.babout {
+	right: 17px;
+	bottom: 69px;
+	background: #fade9c;
+	z-index: 900;
+}
+.bradio.blive {
+	left: 46px;
+	bottom: 38px;
+}
+.bradio.bmap {
+	left: 73px;
+	bottom: 38px;
+}
+.bradio.blive i {
+	font-size: 0.7em;
+}
+/* ===================================== */
 .about {
 	font-family: 'Sawarabi Mincho', serif;
 	position: absolute;
@@ -353,5 +388,6 @@ input#addnew {
 	bottom: 0;
 	width: 100%;
 	border-top: 7px solid lightgray;
+	z-index: 2000;
 }
 /* ===================================== */

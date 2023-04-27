@@ -25,3 +25,25 @@ Senderos Isleños | [Vivir del monte en Garafía (1998)](https://www.youtube.com
 el [visor](https://visor.grafcan.es/visorweb/) de [Grafcan](https://www.grafcan.es/), usando [inteligencia artificial](https://www.grafcan.es/ia_territorial)
 el mapa del [plan insular de ordenacion](https://lapalma.maps.arcgis.com/apps/Viewer/index.html?appid=348a9b73db2c416cb509d49e6d982cc9#!)
 
+☯ Clases de Tai Chi en Las Breñas
+En la Sala Multiusos del Polideportivo Antonio García de San Pedro:
+🅿 https://goo.gl/maps/ZYTQQXmn7tA2Sk527
+⏰ Horario de clases:
+- Tai Chi Continuación - Lunes y Miércoles de 18:45 a 20:00 h.
+- Tai Chi Principiantes - Lunes y Miércoles de 20:00 a 21:00 h.
+
+Tai Chi La Palma ✆ 620 157 776 ✉ Contacto@TaiChiLaPalma.com ☯ www.TaiChiLaPalma.com — Somos instructores voluntarios que impartimos clases de Tai Chi sin ánimo de lucro.
+Como muchos alumnos insisten en pagarnos, aceptamos un donativo de máx. 10 € mensuales para colaborar en gastos de publicidad y de internet. Gracias 🙏
+
+
+
+☯ Clases de Tai Chi en el Valle de Aridane
+Debajo del Mirador de Tajuya y la Parroquia La Sagrada Familia:
+🅿 https://goo.gl/maps/36RY6xEkN4BbDWuZ9
+⏰ Horario de Clases:
+- Tai Chi Continuación - Martes de 19:00 a 20:00 h.
+- Tai Chi Principiantes - Martes de 20:00 a 21:00 h.
+
+Tai Chi La Palma ✆ 620 157 776 ✉ Contacto@TaiChiLaPalma.com ☯ www.TaiChiLaPalma.com — Somos instructores voluntarios que impartimos clases de Tai Chi sin ánimo de lucro.
+Como muchos alumnos insisten en pagarnos, aceptamos un donativo de máx. 10 € mensuales para colaborar en gastos de publicidad y de internet. Gracias 🙏
+

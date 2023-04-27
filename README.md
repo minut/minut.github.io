@@ -1,9 +1,9 @@
 
-> *lastedit map.points 26april.3pm*
+> *lastedit map+texto 04/27.8pm*
 
 
 ## alma ❀ palma
-- *alma·palma* ⠢ es barca en el medio del mar
+- *alma·palma* ⠢ una barca en medio del mar
 - *alma·palma* ⠮ mira local canta global
 - *alma·palma* ⠪ permite todo
 - *alma·palma* ⠅ es libre ♪
@@ -175,80 +175,96 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - paz alegre
 
 ## ⁋ menudas preguntas
-### eso nos añade mas tiempo de pantalla !
+### mas pantalla ?
 - ves que carga el sitio muy rapido ?
-- porque no lleva publicidad, cuentas, trackers...
-- una sola pagina, un lugar único !
-- mientras los gafam te desean enganchadå
-- mas tiempo scroyando contenidos por ellos puestos
-- arriba-bajo con los ojos, pulgar tensado
-- nosotrås experimentamos mas simple
-- pasar menos tiempo frente a pantalla
-- gracias al diseño asado
-- volver ya rapido al suelo y descansar el ojo
+— porque no lleva publicidad, cuentas, trackers
+— una sola pagina, un lugar único
+— mientras los gafam te desean enganchadå
+— mas tiempo scroyando contenidos por ellos puestos
+— arriba-bajo con los ojos
+— pulgar tensado
+— nosotrås experimentamos mas simple
+— pasar menos tiempo frente a pantalla
+— gracias al diseño asado
+— volver ya rapido al suelo y descansar el ojo
 
-### ok, es solo un nuevo *twittermap* limitado a la palma
+### what's app ?
 - los gafam pisotean la calidad
-- para hacer algoritmos de cantidad
-- que corramos a su futuro de vano progresso
-- globalizado al que todo se parezca al suyo
-- donde la comunicacion es vacilla de intencion
-- pero, la suerte de estar en una isla pequeña
-- nos enfoca en la realidad terrenal
-- hacer juntås ! no todås de su lado
-- un esfuerzo de sintesis y comunicacion clara
-- del sentido de las palabras
-- pocas
-- almapalma es biblioteca cuidadosa
-- archivo abierto donde nosotrås somos Historia
-- que dure al tiempo
+— para hacer algoritmos de cantidad
+— que corramos a su futuro de vano progresso
+— globalizado al que todo se parezca al suyo
+— donde la comunicacion es vacilla de intencion
+— pero, la suerte de estar en una isla pequeña
+— nos enfoca en la realidad terrenal
+— hacer juntås ! no todås de su lado
+— un esfuerzo de sintesis y comunicacion clara
+— del sentido de las palabras
+— pocas
+— almapalma es biblioteca
+— cuidadosa
+— archivo abierto
+— nosotrås somos Historia
 
-### es todo publico, no privacidad ?
-- cuando usas los gafam, no tienes accesso a tus datos
-- ni al codigo fuente, que determina todo lo que pasa
-- cualquier clic, tiempo de espera, scroll, palabra
-- esta en venta en los mercados publicitarios mundiales
-- (y la publicidad en dictadura/guerra no es de vender ropa)
-- montamos otro paradigmo
-- codigo abierto, debate consensudado y transparente
-- facilitar acesso y entendimiento para todås
+### es politico !
+- cuando usas los gafam
+— no tienes accesso a tus datos
+— ni al codigo fuente, que determina todo lo que pasa
+— cualquier clic, tiempo de espera, scroll, palabra
+— esta en venta en los mercados publicitarios mundiales
+— (y la publicidad en dictadura/guerra no es de vender ropa)
+— montamos otro paradigmo
+— codigo abierto, debate consensudado y transparente
+— facilitar acesso y entendimiento para todås
 
-### eso no lo va a ver nadie, la gente esta en fasbok, wazap y tiktuk
+### la gente sigue fasbok wazap tiktuk ?
 - la gente esta por todo lado
 - la gente mueve
 - la gente somos nosotrås
 - si no lo experimentamos
 - nadie lo hará a nuestro lugar
 
-### si somos muchås, será confusion !
+### si somos muchås, será confusion
 - libertad de expresíon modulo
 - comunicación consciente, pacifica
 - observar, traducir, adaptar
 
-### igual ni vemos nada en el mapa por tantos mensajes
+### por mapa ?
 - ventaja del zoom !
-- que permite tener miles y miles
-- de mensajes
-- sin que se mesclen demasiado
-- una espiral fractal en la que
-- tu altura ya define la escala
-- estan demás los filtros y la busqueda !
-- viendo los más recientes
-- arriba en la lista
+— que permite tener miles y miles
+— de mensajes
+— sin que se mesclen demasiado
+— una espiral fractal en la que
+— tu altura ya define la escala
 
-### que necesita almapalma ?
-gente buena para mantener la barca !
+### por lista ?
+- estan los filtros y la busqueda !
+— viendo los más recientes
+— mensajes
+— arriba en la fila
+
+### almapalma necesita ?
+- gente buena para mantener la barca !
 un servidor ? una furgo para la guagua ?
-difundir este mensaje por la isla !
+poblar el mapa de lo nos alredea !
+difundir este mensaje por la isla ?
 
 - *no hace falta gritar*
 - *un susurreo solo*
 - *boca a boca*
 - *crecerá !*
 
+
+## radio ♫ alma
+
+- ♬ playlist de los mejores dj's isleñås
+- ☎ radio libre con llamadas en vivo
+- ᱙ recorrido sonoro del mapa
+- ↂ entrevistas locales gente reales
+- ✂ emisoras creativas que montamos juntås ?
+
+
 ## alma ☮ guagua
 has leido todo eso ?
-
 recompensa, un mercadillo ambulante !
 
 - el pendiente real de almapalma

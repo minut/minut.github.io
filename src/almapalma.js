@@ -12,6 +12,10 @@ var puerta = false;
 var puertacount = 1;
 var playlistTotal = 0;
 var playlistCurrent = 0;
+
+var localMarkers = [];
+var audioMarkers = [];
+var cursor = 0;
 ////////////////////////////////////////////
 // we will parse text based on keys
 var tagskeys = {
@@ -75,6 +79,16 @@ const group = L.inflatableMarkersGroup({
 });
 ////////////////////////////////////////////
 var initPlayerFromUrl = function(url,islive) {
+	$(".brut").removeClass("vivo");
+	if(url) {
+		if(!url.startsWith("http")) {
+			url = "files/"+url+".mp3";
+			$(".bmap").addClass("vivo");
+		} else {
+			$(".blive").addClass("vivo");
+		}
+	}
+
 	console.log("startplayer:",url);
 	GreenAudioPlayer.stopOtherPlayers();
 	if(gPlayer) gPlayer.setCurrentTime(0);
@@ -89,14 +103,15 @@ var initPlayerFromUrl = function(url,islive) {
 	gPlayer.togglePlay();
 	$(".control").show();
 
-	$(".player").on("ended", function() {
-		console.log("next song ?");
+	$("#audioname").html(url);
+
+	$(".player audio").on("ended", function() {
+		console.log("nextsong:",cursor);
+		cursor = (cursor+1)%audioMarkers.length;
+		var nextf = audioMarkers[cursor];
+		initPlayerFromUrl(nextf);
 	});
 
-	if(islive)
-		$(".playstream").addClass("live");
-	else
-		$(".playstream").removeClass("live");
 };
 ////////////////////////////////////////////
 var addNewPoint = function(text) {
@@ -161,7 +176,7 @@ var refreshAudioButtons = function() {
 			if(aud.startsWith("http")) // live stream
 				initPlayerFromUrl(aud,true);
 			else // local file
-				initPlayerFromUrl("files/"+aud+".mp3");
+				initPlayerFromUrl(aud);
 			$(this).parent().parent().addClass("onair");
 			event.stopPropagation();
 		});
@@ -197,7 +212,6 @@ var toggleTag = function(tagelem) {
 	refreshAudioButtons();
 };
 ////////////////////////////////////////////
-var localMarkers = [];
 var instantiateTodo = function() {
 	
 	buildMap();
@@ -244,6 +258,8 @@ var instantiateTodo = function() {
         //marker.feature = {'title':d.text};
         myLayerGroup.addLayer(smarker);
         localMarkers.push(marker);
+        if(d.file)
+        	audioMarkers.push(d.file);
 		group.addLayer(marker);
 
 		marker.on("click", function(e){
@@ -303,8 +319,8 @@ var instantiateTodo = function() {
 		layer: myLayerGroup,
 		propertyName: 'title',
 		initial: false, // search not only start of strings
-		zoom: 16,
-		textPlaceholder: "busca...",
+		zoom: 14,
+		textPlaceholder: "busca... (espacio para ver todo)",
 		autoResize: false,
 		hideMarkerOnCollapse: true,
 		buildTip: function(text, val) {
@@ -429,39 +445,25 @@ window.addEventListener('load', function() {
 		//if(puerta) $(".about").hide();
 		$(".about").hide();
 	});
-	$(".toglabout").on('click', function(e) {
+	$(".babout").on('click', function(e) {
 		$(".about").show();
 		event.stopPropagation();
 	});
+
+	$(".blive").on('click', function(e) {
+		$(".bmap").removeClass('vivo');
+		$(".blive").addClass('vivo');
+		initPlayerFromUrl("http://stream.zeno.fm/kl8i0p0gju4vv",true);
+	});
+	
+	$(".bmap").on('click', function(e) {
+		$(".blive").removeClass('vivo');
+		$(".bmap").addClass('vivo');
+		cursor = Math.floor(audioMarkers.length*Math.random());
+		initPlayerFromUrl(audioMarkers[cursor]);
+	});
 	
 	//$(".about").hide();
-
-	// $.ajax({
-	// 	crossDomain: true,
-	// 	type: 'POST',
-	// 	url: 'https://eu-central-1.aws.data.mongodb-api.com/app/data-fzstk/endpoint/data/v1/action/find',
-	// 	dataType: 'application/json',
-	// 	contentType: 'application/json',
-	// 	headers: {
-	// 		'Content-Type': 'application/json',
-	// 		'Access-Control-Request-Headers': '*',
-	// 		'Access-Control-Allow-Origin': '*',
-	// 		'api-key': 'EFGR1kttMZR54Zn26nzbFUxkj3BKGw2fQeNbhGrX4Fuo0sLt2qcL4iq0GwpwR0ky'
-	// 	},
-	// 	data: {
-	// 		"dataSource": "ClusterMong",
-	// 		"database": "db_alma",
-	// 		"collection": "radio",
-	// 		"filter": {
-	// 			//"status": "1",
-	// 		},
-	// 		//"sort": { "made": 'fromheart' },
-	// 		"limit": 40
-	// 	},
-	// 	success: function(r) {
-	// 		console.log('done:',r);	
-	// 	}
-	// });
 
 	$.ajax({
 		url: urlfetchcsv,
@@ -474,3 +476,31 @@ window.addEventListener('load', function() {
 	});
 
 }, false);
+
+
+// $.ajax({
+// 	crossDomain: true,
+// 	type: 'POST',
+// 	url: 'https://eu-central-1.aws.data.mongodb-api.com/app/data-fzstk/endpoint/data/v1/action/find',
+// 	dataType: 'application/json',
+// 	contentType: 'application/json',
+// 	headers: {
+// 		'Content-Type': 'application/json',
+// 		'Access-Control-Request-Headers': '*',
+// 		'Access-Control-Allow-Origin': '*',
+// 		'api-key': 'EFGR1kttMZR54Zn26nzbFUxkj3BKGw2fQeNbhGrX4Fuo0sLt2qcL4iq0GwpwR0ky'
+// 	},
+// 	data: {
+// 		"dataSource": "ClusterMong",
+// 		"database": "db_alma",
+// 		"collection": "radio",
+// 		"filter": {
+// 			//"status": "1",
+// 		},
+// 		//"sort": { "made": 'fromheart' },
+// 		"limit": 40
+// 	},
+// 	success: function(r) {
+// 		console.log('done:',r);	
+// 	}
+// });
