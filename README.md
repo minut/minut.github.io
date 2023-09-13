@@ -1,5 +1,5 @@
 
-> *lastedit map+texto 04/27.8pm*
+> *lastedit mapa+texto 13 sept 2023*
 
 
 ## alma ❀ palma
@@ -174,7 +174,7 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 - respiro fundo y
 - paz alegre
 
-## ⁋ menudas preguntas
+## ⁋ menudas perguntas
 ### mas pantalla ?
 - ves que carga el sitio muy rapido ?
 — porque no lleva publicidad, cuentas, trackers
@@ -218,50 +218,101 @@ juntate al [borrador compartido](https://etherpad.wikimedia.org/p/almapalma), do
 
 ### la gente sigue fasbok wazap tiktuk ?
 - la gente esta por todo lado
-- la gente mueve
-- la gente somos nosotrås
-- si no lo experimentamos
-- nadie lo hará a nuestro lugar
+— la gente mueve
+— la gente somos nosotrås
+— si no lo experimentamos
+— nadie lo hará a nuestro lugar
+— calidad mas vale que cantidad
+— una prueba de que si puede existir
+— frente al rapido capitalismo
+— no hace falta hablar lo todo
+— sino curar una buena selección
 
-### si somos muchås, será confusion
-- libertad de expresíon modulo
-- comunicación consciente, pacifica
-- observar, traducir, adaptar
+### vuelvo y nada nuevo, falta eso y eso...
+- habia que empezar por algo
+— es lento
+— es experimento
+— tiene estructura minimalista y abierta
+— lo podemos facil cambiar, mejorar a gusto
+— juntanos ya al añadir atencion y sabor
 
-### por mapa ?
-- ventaja del zoom !
-— que permite tener miles y miles
-— de mensajes
+### por mapa ? por lista ?
+- ventaja del zoom
+— que permite tener miles de mensajes
 — sin que se mesclen demasiado
-— una espiral fractal en la que
+— una espiral fractal donde
 — tu altura ya define la escala
-
-### por lista ?
-- estan los filtros y la busqueda !
+— tambien estan filtros y busqueda
 — viendo los más recientes
-— mensajes
 — arriba en la fila
+
+### romper categorias
+- usar todo nuevo
+— en la rueda astral del caos de tus manos
+— el espacio fregado por sangre colonialista
+— juntar cuerpo con el territorio real
+— sus curvas su peso y sus historias
+— las ideas abstractas fuera de contexto
+— algo que sea palmero, de aqui ! 
+— no diluido en lo todo
+
+### universidad popular del cambio
+- un simple tablero localizado
+— bonita hoja de papel compartida
+— trozo de historia presente
+— que escribirias ?
+— ofrecer conocimiento, saber, truco, experiencia
+— pedir por un curso, lo que quieres aprender o mejorar
+— te gusta algo ?
+— dejalo para que este leido, compartido
+
+### ritmo equilibrado
+- entre
+— FMO (fear of missing out)
+— que siempre al cada tiempo deseas lo mas fresco
+— noticia nueva, adrenalina despierta
+— «los demas saben más, me he perdido algo ¡
+— OOK (only one to know)
+— orgullo del ego que asi se valora
+— ser el único del este al corriente
+— «los demás no saben tanto como yo !
+
+### solución, compartir
+- comunicar es base de todo
+— la escritura conciente
+— colectiva, pacífica
+— es un aprendizaje
+— político
+— encontrar formas de convivir
+— observar, traducir, adaptar
+— sin olvido, sin domino, sin todo querer controlar
+— abre tu corazon, comparta la informacion
+— mas dar <> mas recibir
+— va lento ! no reactionar al tiro, tomar tiempo, madurar
+— nueva edicion publicada cada x dias ?
+— va corto ! sintetico, hacer poco hacer bueno
+— tamaño maximo para los contenidos ?
 
 ### almapalma necesita ?
 - gente buena para mantener la barca !
 un servidor ? una furgo para la guagua ?
-poblar el mapa de lo nos alredea !
+poblar el mapa con palabras alrededas !
 difundir este mensaje por la isla ?
 
 - *no hace falta gritar*
 - *un susurreo solo*
 - *boca a boca*
-- *crecerá !*
+- *¡ crecerá !*
 
 
 ## radio ♫ alma
 
 - ♬ playlist de los mejores dj's isleñås
 - ☎ radio libre con llamadas en vivo
-- ᱙ recorrido sonoro del mapa
-- ↂ entrevistas locales gente reales
-- ✂ emisoras creativas que montamos juntås ?
-
+- ↂ recorrido sonoro del mapa
+- ☺ entrevistas locales gente reales
+- ᱙ ruidos voces oidos aqui desde todos campos
+- ✂ emisoras que montamos juntås ?
 
 ## alma ☮ guagua
 has leido todo eso ?
