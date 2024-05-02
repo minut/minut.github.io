@@ -105,7 +105,8 @@ html, body {
 	right: 0;
 	padding: 0px 20px;
 	text-align: left;
-	background: #fade9c;
+	background: black;/*#fade9c;*/
+	color: #fade9c;
 	z-index: 9999999;
 	overflow-y: scroll;
 }
