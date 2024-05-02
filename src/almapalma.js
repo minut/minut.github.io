@@ -62,7 +62,7 @@ var buildMarkerHtml = function(d) {
 	txtlong = ' <span class="more">'+txtlong+'</span>';
 	// O button icon for audio play
 	if(d.file) {
-		ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'</span> ';
+		ihtml = '<button audio="'+d.file+'">'+ihtml+'</button> <span class="dur">'+d.dur+'min</span> ';
 	}
 	return '<div>'+arrow+ihtml+txtshort+txtlong+'</div>';
 };
