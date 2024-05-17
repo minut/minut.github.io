@@ -23,7 +23,7 @@ var tagskeys = {
 	//"D":["desconociDo","compass.sun-o",0],
 	"E":["eventos","calendar-o.clock-o",0],
 	"I":["fincas","podcast.home.street-view",0],
-	"M":["transporte","truck.car.bus.thumbs-o-up",0],
+	"M":["transporte","bicycle.truck.car.bus.thumbs-o-up",0],
 	"S":["cosas","wrench.recycle.suitcase.pie-chart",0],
 	"C":["comida","pie-chart.lemon-o.shopping-basket.calculator",0],
 	"N":["naturaleza","pagelines",0],

@@ -275,7 +275,7 @@ input#addnew {
 	filter: none;
 }
 .tag.on i {
-
+	color: black;
 }
 /* ===================================== */
 .leaflet-control-attribution {
