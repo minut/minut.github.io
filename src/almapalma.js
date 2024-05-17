@@ -251,7 +251,7 @@ var instantiateTodo = function() {
 		});
 		const smarker = L.marker([d.lat,d.lng], {
 			title: d.dur ? "<span>"+d.dur +"min</span> "+d.text : d.text,
-			seuch: d.text +" "+ d.file,
+			seuch: d.file+" - "+d.text ,
 			tagicon: getTagIcon(d),
 			icon: L.divIcon({className: "hide"})
 		});
