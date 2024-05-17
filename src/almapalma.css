@@ -382,6 +382,10 @@ input#addnew {
 	border: none;
 	border-radius: 0px;
 }
+.leaflet-control-search .search-tip span {
+	color: #a8a8a8;
+  font-style: italic;
+}
 .leaflet-control-search .search-cancel {
 	right: 34px;
 }

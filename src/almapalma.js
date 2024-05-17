@@ -250,7 +250,8 @@ var instantiateTodo = function() {
 			}),
 		});
 		const smarker = L.marker([d.lat,d.lng], {
-			title: d.text,
+			title: d.dur ? "<span>"+d.dur +"min</span> "+d.text : d.text,
+			seuch: d.text +" "+ d.file,
 			tagicon: getTagIcon(d),
 			icon: L.divIcon({className: "hide"})
 		});
@@ -317,7 +318,7 @@ var instantiateTodo = function() {
 	//https://github.com/stefanocudini/leaflet-search
 	var searchControl = L.control.search({
 		layer: myLayerGroup,
-		propertyName: 'title',
+		propertyName: 'seuch',
 		initial: false, // search not only start of strings
 		zoom: 14,
 		textPlaceholder: "busca... (espacio para ver todo)",
