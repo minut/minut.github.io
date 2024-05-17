@@ -385,6 +385,7 @@ input#addnew {
 .leaflet-control-search .search-tip span {
 	color: #a8a8a8;
   font-style: italic;
+  font-size: 0.8em;
 }
 .leaflet-control-search .search-cancel {
 	right: 34px;
